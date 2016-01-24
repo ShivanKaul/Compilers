@@ -11,12 +11,15 @@ void yyerror() {
 %}
 
 %union {
-   int intconst;
-   char *stringconst;
+	float floatconst;
+	int intconst;
+	char *stringconst;
 }
 
 %token <intconst> T_int_lit
 %token <stringconst> T_int
+%token <floatconst> T_float_int
+%token <stringconst> T_float
 %token <stringconst> T_string
 %token <stringconst> T_string_lit
 %token <stringconst> T_id  
@@ -30,11 +33,10 @@ void yyerror() {
 %token <stringconst> T_then
 %token <stringconst> T_else
 
-%start exp
+%start prog
 
 %left '+' '-'
 %left '*' '/'
-
 %% 
 
 /* input:
@@ -45,18 +47,31 @@ line:	'\n'
     | exp '\n'
 ; */
 
-exp:	T_int_lit
-   	| error 
-   	| T_var T_id ':' T_int ';'
-	| T_var T_id ':' T_string ';'
-	| T_id '=' exp ';' exp
-	| exp ';'
-	| T_id '=' T_string_lit ';'
-	| T_id '=' exp ';'
-	| exp '+' exp 
-	| exp '-' exp 
-	| exp '*' exp
-	| exp '/' exp
+prog:		next_stmt
+    		| next_stmt ';'
+
+decl:		T_var T_id ':' T_float
+		| T_var T_id ':' T_int
+		| T_var T_id ':' T_string
+
+next_stmt:	stmt
+	 	| next_stmt ';' stmt
+
+stmt:		T_id '=' exp 
+		| T_var T_id ':' T_float
+		| T_var T_id ':' T_int
+		| T_var T_id ':' T_string
+
+exp:		T_int_lit
+   		| T_string_lit
+/*		| T_float_lit */
+	   	| T_id
+		| exp '+' exp 
+		| exp '-' exp 
+		| exp '*' exp
+		| exp '/' exp
+		| '-'  exp      %prec  '*'
+	   	| error  { yyerror(); }
 /*	| MINUS exp %prec NEG { $$=-$2; } */	
 /*	| T_id '='  { $$=$2; } */
 ;
@@ -65,7 +80,7 @@ exp:	T_int_lit
 
 int main() {
   if (yyparse())
-     fprintf(stderr, "Successful parsing.\n");
-  else
      fprintf(stderr, "Error found.\n");
+  else
+     fprintf(stderr, "Successful parsing.\n");
 }
