@@ -1,12 +1,13 @@
 %{
 #include <stdio.h>
+#include <stdlib.h>
 
 extern char *yytext;
 extern int yylineno;
 int yydebug=1;
 
 void yyerror() {
-	printf ("Syntax error before %s on %d\n", yytext, yylineno); 
+	fprintf(stderr, "Syntax error before %s on %d\n", yytext, yylineno); 
 }
 %}
 
@@ -47,12 +48,11 @@ line:	'\n'
     | exp '\n'
 ; */
 
-prog:		next_stmt
-    		| next_stmt ';'
+prog:		next_stmt ';'
 
-decl:		T_var T_id ':' T_float
+/* decl:		T_var T_id ':' T_float
 		| T_var T_id ':' T_int
-		| T_var T_id ':' T_string
+		| T_var T_id ':' T_string */
 
 next_stmt:	stmt
 	 	| next_stmt ';' stmt
@@ -79,8 +79,12 @@ exp:		T_int_lit
 %%
 
 int main() {
-  if (yyparse())
-     fprintf(stderr, "Error found.\n");
-  else
-     fprintf(stderr, "Successful parsing.\n");
+	if (yyparse()) {
+		fprintf(stderr, "INVALID.\n");
+		printf("0\n");
+	}
+	else {
+		fprintf(stderr, "VALID.\n");
+		printf("1\n");
+	}
 }
