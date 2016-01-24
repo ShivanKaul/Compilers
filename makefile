@@ -1,7 +1,7 @@
 compile: tiny.l tiny.y
 	flex tiny.l
-	bison tiny.y
-	gcc -o minic lex.yy.c tiny.tab.c -ll
+	bison --debug --verbose tiny.y
+	gcc -o minic lex.yy.c tiny.tab.c -ll -w
 
 clean: 
 	rm *.c *.h

@@ -9,7 +9,7 @@
 %option yylineno
 %%
 [ \t]+		/* ignore tabs */;
-\n			{ };
+\n			{ }; 
 "#".*		/* comment */;
 
 "*"			return '*';
@@ -42,8 +42,8 @@
   return T_id; 
 }
 
-":" "string"	return T_string; /* TODO */
-":" "int"		return T_int;
+ /* "string"	return T_string;  TODO */
+ /* "int"		return T_int; */
 
 0|([1-9][0-9]*) {
   yylval.intconst = atoi (yytext);
