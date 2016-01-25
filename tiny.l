@@ -45,6 +45,11 @@
 	return T_string_lit; 
 }
 
+(0|[1-9]*)\.[0-9]* {
+	yylval.floatconst = atof (yytext);
+	return T_float_lit;
+}
+
 [a-zA-Z_][a-zA-Z0-9_]* { 
 	yylval.stringconst = (char *) malloc (strlen (yytext) + 1);
 	sprintf (yylval.stringconst, "%s", yytext); 
