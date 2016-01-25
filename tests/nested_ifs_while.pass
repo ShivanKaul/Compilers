@@ -1,0 +1,14 @@
+if x then
+	if y then
+		print x;
+	endif
+	while y do
+		x = 1;
+		if "hello" then
+			print y;
+				while "to" do
+					print y;
+				done
+		endif
+	done
+endif

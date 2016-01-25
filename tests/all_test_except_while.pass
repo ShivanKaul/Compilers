@@ -1,0 +1,19 @@
+var x: string; var y: int;
+
+x = "hello";
+y = 1;
+z = 2.0;
+
+print x + 10;
+read y;
+
+if "hello" then
+	print x;
+	read y;
+else
+	x = 7;
+	z = 2.;
+endif
+
+print "hello";
+x = 20;

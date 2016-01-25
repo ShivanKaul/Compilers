@@ -7,7 +7,7 @@ extern int yylineno;
 int yydebug=1;
 
 void yyerror() {
-	fprintf(stderr, "Syntax error before %s on %d\n", yytext, yylineno); 
+	fprintf(stderr, "Syntax error before %s on %d. ", yytext, yylineno); 
 }
 %}
 
@@ -46,19 +46,19 @@ void yyerror() {
 %left '*' '/'
 %% 
 
-prog:		next_decl
-    		| next_decl next_stmt 
-    		| next_stmt 
+prog:		decl_list
+    		| decl_list stmt_list 
+    		| stmt_list 
 
-next_decl:	decl
-		| next_decl decl
+decl_list:	decl
+		| decl_list decl
 
 decl:		T_var T_id ':' T_float ';'
 		| T_var T_id ':' T_int ';'
 		| T_var T_id ':' T_string ';'
 
-next_stmt:	stmt
-	 	| next_stmt stmt
+stmt_list:	stmt
+	 	| stmt_list stmt
 
 stmt:		T_id '=' exp ';'
     		| T_print exp ';'
@@ -66,10 +66,10 @@ stmt:		T_id '=' exp ';'
 		| if_stmt
 		| while_stmt
 
-if_stmt:	T_if exp T_then next_stmt T_endif
-		| T_if exp T_then next_stmt T_else next_stmt T_endif
+if_stmt:	T_if exp T_then stmt_list T_endif
+		| T_if exp T_then stmt_list T_else stmt_list T_endif
 
-while_stmt:	T_while exp T_do next_stmt T_done
+while_stmt:	T_while exp T_do stmt_list T_done
 
 exp:		T_int_lit
    		| T_string_lit

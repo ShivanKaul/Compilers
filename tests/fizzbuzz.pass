@@ -1,0 +1,23 @@
+# Solve FizzBuzz in reverse
+var x : int;
+x = 100;
+
+while x do
+	if x / 5 then 
+		if x / 3 then
+			print "FizzBuzz";
+		else
+			print "Buzz";
+		endif
+	endif
+	if x / 3 then
+		print "Fizz";
+	else
+		print x;
+	endif
+	x = x - 1;
+done
+
+
+
+
