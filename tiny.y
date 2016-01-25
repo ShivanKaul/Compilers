@@ -48,19 +48,25 @@ line:	'\n'
     | exp '\n'
 ; */
 
-prog:		next_stmt ';'
+prog:		next_decl ';'
+    		| next_decl ';' next_stmt ';'
+    		| next_stmt ';'
 
-/* decl:		T_var T_id ':' T_float
+next_decl:	decl
+		| next_decl ';' decl
+
+decl:		T_var T_id ':' T_float
 		| T_var T_id ':' T_int
-		| T_var T_id ':' T_string */
+		| T_var T_id ':' T_string 
 
 next_stmt:	stmt
 	 	| next_stmt ';' stmt
 
 stmt:		T_id '=' exp 
-		| T_var T_id ':' T_float
+/*		| T_var T_id ':' T_float
 		| T_var T_id ':' T_int
 		| T_var T_id ':' T_string
+*/
 
 exp:		T_int_lit
    		| T_string_lit
@@ -80,11 +86,9 @@ exp:		T_int_lit
 
 int main() {
 	if (yyparse()) {
-		fprintf(stderr, "INVALID.\n");
-		printf("0\n");
+		printf("INVALID.\n");
 	}
 	else {
-		fprintf(stderr, "VALID.\n");
-		printf("1\n");
+		printf("VALID.\n");
 	}
 }
