@@ -17,9 +17,18 @@ void yyerror() {
 	char *stringconst;
 }
 
+/* Formatting semantic values.  */
+%printer { fprintf (yyoutput, "%s", $$); } T_string_lit;
+%printer { fprintf (yyoutput, "%f", $$); } T_float_lit;
+%printer { fprintf (yyoutput, "%d", $$); } T_int_lit;
+/*
+%printer { fprintf (yyoutput, "%s()", $$->name); } FNCT;
+%printer { fprintf (yyoutput, "%g", $$); } <double>;
+*/
+
 %token <intconst> T_int_lit
 %token <stringconst> T_int
-%token <floatconst> T_float_int
+%token <floatconst> T_float_lit
 %token <stringconst> T_float
 %token <stringconst> T_string
 %token <stringconst> T_string_lit
@@ -63,21 +72,16 @@ next_stmt:	stmt
 	 	| next_stmt ';' stmt
 
 stmt:		T_id '=' exp 
-/*		| T_var T_id ':' T_float
-		| T_var T_id ':' T_int
-		| T_var T_id ':' T_string
-*/
 
 exp:		T_int_lit
    		| T_string_lit
-/*		| T_float_lit */
+		| T_float_lit
 	   	| T_id
 		| exp '+' exp 
 		| exp '-' exp 
 		| exp '*' exp
 		| exp '/' exp
 		| '-'  exp      %prec  '*'
-	   	| error  { yyerror(); }
 /*	| MINUS exp %prec NEG { $$=-$2; } */	
 /*	| T_id '='  { $$=$2; } */
 ;
