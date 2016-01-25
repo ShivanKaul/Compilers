@@ -1,10 +1,11 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 extern char *yytext;
 extern int yylineno;
-int yydebug=1;
+int yydebug;
 
 void yyerror() {
 	fprintf(stderr, "Syntax error before %s on %d. ", yytext, yylineno); 
@@ -85,7 +86,11 @@ exp:		T_int_lit
 
 %%
 
-int main() {
+int main(int argc, char* argv[]) {
+	// Debug?
+	if (argc < 2) yydebug = 0; 
+	else yydebug = strcmp("-debug", argv[1]) ? 0 : 1;
+
 	if (yyparse()) {
 		printf("INVALID.\n");
 	}

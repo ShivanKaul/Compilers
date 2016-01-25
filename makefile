@@ -1,30 +1,24 @@
+CFLAGS = -ll
+CFLAGSw = $(CFLAGS) -w
+
 compileall: 
 	make process
 	make compile
 
-compileallW: 
+nowarning: 
 	make process
-	make compileW
+	make compilew
 
 process: tiny.l tiny.y
-	bison -d tiny.y
-	bison tiny.y
-	flex tiny.l
-
-compileDebug:
-	make debug
-	make compile
-
-debug: tiny.l tiny.y
 	bison -d tiny.y
 	bison --verbose --debug tiny.y
 	flex tiny.l
 
 compile:
-	gcc -o minic lex.yy.c tiny.tab.c -ll
+	gcc -o minic lex.yy.c tiny.tab.c $(CFLAGS)
 
-compileW: 
-	gcc -o minic lex.yy.c tiny.tab.c -ll -w
+compilew: 
+	gcc -o minic lex.yy.c tiny.tab.c $(CFLAGSw)
 
 clean: 
 	rm *.c *.h *.output
