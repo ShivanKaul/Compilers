@@ -54,23 +54,23 @@ line:	'\n'
     | exp '\n'
 ; */
 
-prog:		next_decl ';'
-    		| next_decl ';' next_stmt ';'
-    		| next_stmt ';'
+prog:		next_decl
+    		| next_decl next_stmt 
+    		| next_stmt 
 
 next_decl:	decl
-		| next_decl ';' decl
+		| next_decl decl
 
-decl:		T_var T_id ':' T_float
-		| T_var T_id ':' T_int
-		| T_var T_id ':' T_string 
+decl:		T_var T_id ':' T_float ';'
+		| T_var T_id ':' T_int ';'
+		| T_var T_id ':' T_string ';'
 
 next_stmt:	stmt
-	 	| next_stmt ';' stmt
+	 	| next_stmt stmt
 
-stmt:		T_id '=' exp 
-    		| T_print exp
-		| T_read T_id
+stmt:		T_id '=' exp ';'
+    		| T_print exp ';'
+		| T_read T_id ';'
 		| if_stmt
 
 if_stmt:	T_if exp T_then next_stmt T_endif
