@@ -1,23 +1,21 @@
 import os
 import glob
-os.chdir("tests/")
-for file in glob.glob("*.fail"):
-	cmd = "./minic < %s 2>/dev/null" % file
-	print file
-	output = os.system(cmd)
-	print output
-	if (output):
-		print "%s was supposed to fail." % file
-		quit() 
 
-for file in glob.glob("*.pass"):
+def run_test(file):
 	cmd = "./minic < %s 2>/dev/null" % file
-	print file
-	output = os.system(cmd)
-	#output = (os.system(cmd) / 256) - 1
-	print output
-	if (output):
-		print "%s was supposed to pass." % file
-		quit() 
+	print "> %s : " % file
+	os.system(cmd)
 
-print "All pass!"
+print 
+
+print "Running tests that should return VALID..."
+for file in glob.glob("tests/*.pass"):
+	run_test(file)
+
+print
+
+print "Running tests that should return INVALID..."
+for file in glob.glob("tests/*.fail"):
+	run_test(file)
+
+

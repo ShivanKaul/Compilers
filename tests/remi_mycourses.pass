@@ -1,5 +1,4 @@
-var z: int; var l: string;
+var z: int; var l: string; var y: float;
 
 x = 2;
-
 y = 3; z = 4;
