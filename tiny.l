@@ -38,6 +38,7 @@
 "if"		return T_if;
 "then"		return T_then;
 "else"		return T_else;
+"endif"		return T_endif;
 
 \"[a-zA-Z0-9?! .]*\" {
 	yylval.stringconst = (char *) malloc (strlen (yytext) + 1);

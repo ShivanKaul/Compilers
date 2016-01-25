@@ -38,6 +38,7 @@ void yyerror() {
 %token <stringconst> T_if
 %token <stringconst> T_then
 %token <stringconst> T_else
+%token <stringconst> T_endif
 
 %start prog
 
@@ -70,6 +71,10 @@ next_stmt:	stmt
 stmt:		T_id '=' exp 
     		| T_print exp
 		| T_read T_id
+		| if_stmt
+
+if_stmt:	T_if exp T_then next_stmt T_endif
+		| T_if exp T_then next_stmt T_else next_stmt T_endif
 
 exp:		T_int_lit
    		| T_string_lit
