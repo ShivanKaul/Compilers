@@ -21,10 +21,6 @@ void yyerror() {
 %printer { fprintf (yyoutput, "%s", $$); } T_string_lit;
 %printer { fprintf (yyoutput, "%f", $$); } T_float_lit;
 %printer { fprintf (yyoutput, "%d", $$); } T_int_lit;
-/*
-%printer { fprintf (yyoutput, "%s()", $$->name); } FNCT;
-%printer { fprintf (yyoutput, "%g", $$); } <double>;
-*/
 
 %token <intconst> T_int_lit
 %token <stringconst> T_int
@@ -72,6 +68,8 @@ next_stmt:	stmt
 	 	| next_stmt ';' stmt
 
 stmt:		T_id '=' exp 
+    		| T_print exp
+		| T_read T_id
 
 exp:		T_int_lit
    		| T_string_lit
@@ -82,8 +80,6 @@ exp:		T_int_lit
 		| exp '*' exp
 		| exp '/' exp
 		| '-'  exp      %prec  '*'
-/*	| MINUS exp %prec NEG { $$=-$2; } */	
-/*	| T_id '='  { $$=$2; } */
 ;
 
 %%

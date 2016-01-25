@@ -6,8 +6,6 @@ def run_test(file):
 	print "> %s : " % file
 	os.system(cmd)
 
-print 
-
 print "Running tests that should return VALID..."
 for file in glob.glob("tests/*.pass"):
 	run_test(file)
