@@ -9,11 +9,11 @@ read x;
 guess = 1;
 iter = 10;
 
-#while iter do
- # quot = x / guess;
-  #guess = 0.5 * (guess + quot);
-  #iter = iter - 1;
-#done
+while iter do
+  quot = x / guess;
+  guess = 0.5 * (guess + quot);
+  iter = iter - 1;
+done
 
 print guess;
 print guess * guess;
