@@ -1,0 +1,15 @@
+#invalid strings
+
+var s1 : string;
+var s2 : string;
+var s3 : string;
+
+
+s3 = "";
+
+s1 = "$";
+
+s2 = "hello 
+";
+
+

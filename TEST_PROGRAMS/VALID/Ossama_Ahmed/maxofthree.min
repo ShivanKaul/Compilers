@@ -1,0 +1,30 @@
+#Maximum over three number
+var first: float; #declare first variable for the user to enter
+var second: float; #declare second variable for the user to enter
+var third: float; #declare third variable for the user to enter
+print "Please enter the 3 numbers you want to compare and the get the maximum over them";
+read first;
+read second;
+read third;
+
+#Begin Comparison here
+if (first-second) then 
+	print "first is bigger than the second";
+	if(first-third) then
+		print "first is bigger than the third";
+		print "the first number is the biggest";
+	else
+		print "third is bigger than the first";
+		print "the third number is the biggest";
+	endif
+else
+	print "second is bigger than the first";
+	if(second-third) then
+		print "the second number is the biggest";
+		print "second is bigger than the third";
+	else
+		print "the third number is the biggest";
+		print "third is bigger than the second";
+	endif
+endif
+

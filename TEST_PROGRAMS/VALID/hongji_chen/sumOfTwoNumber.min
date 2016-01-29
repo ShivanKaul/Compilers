@@ -1,0 +1,22 @@
+# read two words from keyborad
+# print the sum of the two numbers
+
+var numA : int;   #hold the first number
+var numB : int;   #hold the second number
+
+if numA then
+	print "number should not be zero";
+else
+	if numB then
+		print "number should not be zero";
+	else	
+		print "Input number 1 , ";			#prompt
+		read numA;							#read first number
+		print "Input number 2 , ";			#prompt
+		read numB;							#read second number
+		numA = numA + numB;					#calculate the sum
+		print "Sum of two number , ";		#prompt
+		print numA;							#print out the sum
+	endif
+endif
+#end of program

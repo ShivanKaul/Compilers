@@ -1,0 +1,4 @@
+var x: int;
+var res: int;
+
+x = res = 0;

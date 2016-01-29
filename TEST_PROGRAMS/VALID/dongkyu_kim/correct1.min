@@ -1,0 +1,15 @@
+# correct 1
+
+var x: int;
+var y: int;
+
+x = 10;
+y = 1;
+
+while x do
+    y = y * x;
+    x = x - 1;
+done
+
+print x;
+

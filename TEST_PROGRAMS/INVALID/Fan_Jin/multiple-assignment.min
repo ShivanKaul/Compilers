@@ -1,0 +1,12 @@
+var x: int;
+var y: string;
+var z: string;
+
+x = 0;
+y = z = "hello";
+
+if x then
+  print z;
+else
+  print "not " + z;
+endif

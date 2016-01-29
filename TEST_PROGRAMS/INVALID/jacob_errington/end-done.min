@@ -1,0 +1,5 @@
+while x do
+    # something important
+endif
+# mixed up endif and done
+

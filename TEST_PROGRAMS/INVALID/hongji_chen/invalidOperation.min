@@ -1,0 +1,6 @@
+#invalid operation
+
+var a : int;
+
+print read a;
+

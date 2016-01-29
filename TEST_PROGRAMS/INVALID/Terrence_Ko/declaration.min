@@ -1,0 +1,12 @@
+#random declaration, ez mode error
+
+var n: int;
+n = 0;
+
+if (n) then
+	var j: int;
+else
+	print "you should not see this";
+endif
+
+

@@ -1,0 +1,34 @@
+# Estimates the square root of a number
+
+var x: float; # number whose sqrt will be calculated
+var counter: int; # number of iterations of sequence
+var sqrt: float; # result
+var endl: string;
+var starting_msg: string;
+var result_msg: string;
+
+endl = "";
+starting_msg = "Calculating the square root of ";
+result_msg = "The square root is approximately ";
+
+
+x = 153.0;
+counter = 100;
+sqrt = x;
+
+print starting_msg;
+print x;
+print endl;
+
+while counter do
+    sqrt = (0.5)*(sqrt + x/sqrt);
+    counter = counter - 1;
+done
+
+print result_msg;
+print sqrt;
+print endl;
+
+
+
+

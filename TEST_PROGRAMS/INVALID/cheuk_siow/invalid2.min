@@ -1,0 +1,6 @@
+# Invalid program 2: invalid type declaration.
+
+var s: sentence;
+s = "Variable s of sentence type";
+print s;
+

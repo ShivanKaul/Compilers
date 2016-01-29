@@ -1,0 +1,4 @@
+# Extra semi-colon.
+
+var x: float;;
+

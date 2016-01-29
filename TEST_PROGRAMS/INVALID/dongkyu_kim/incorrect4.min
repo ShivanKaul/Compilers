@@ -1,0 +1,8 @@
+# incorrect 4
+
+var 9st: int;
+
+9st = 3;
+
+print 9st;
+

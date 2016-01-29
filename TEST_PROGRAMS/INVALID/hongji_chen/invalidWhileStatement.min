@@ -1,0 +1,7 @@
+#INVALD PROGRAM FAULTY WHILE STATEMENT
+
+var num : int;
+
+while (num=0) do
+	num = num -1;
+done

@@ -1,0 +1,18 @@
+# correct 2
+
+var pi: float;
+var result: float;
+var i: int;
+
+pi = 3.141592;
+result = 0;
+
+# sum of the areas of circles with radius 1, 2, and 3
+i = 3;
+while i do
+    result = result + pi * i * i;
+    i = i - 1;
+done
+
+print result;
+

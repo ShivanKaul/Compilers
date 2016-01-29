@@ -1,0 +1,6 @@
+# Dangling period.
+
+var x: float;
+
+x = .;
+

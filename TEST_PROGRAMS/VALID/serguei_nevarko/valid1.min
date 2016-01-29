@@ -1,0 +1,43 @@
+var x: int;
+
+#####################
+### Some Comments ###
+#####################
+# This is a useless #
+# program that      #
+# tests some key    #
+# functionality of  #
+# the parser.       #
+#####################
+
+
+var y : int;
+var z :float;
+var a: string;
+
+a = "hello!.,??!! this is a TEST!!!....1111";
+a = "";
+
+x = -10;
+y = 5;
+z = -0.34;
+z = .24;
+z = 56.;
+z = 73.84;
+x = x+5;
+
+if x then
+  while x do
+    x = x-1;
+    print x;
+  done
+else
+  #do nothing
+endif
+
+while x+1 do
+  x = x-1;
+  print (((5+10)/2)*(18+3));
+done
+
+

@@ -1,0 +1,15 @@
+# no declaration inside if block 
+var x: int; 
+
+x = 1;
+
+if x then
+	var y: int;
+	y = 40;
+endif
+
+
+
+
+
+

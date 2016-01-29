@@ -1,0 +1,7 @@
+# Scott Cooper
+# 260503452
+# COMP520 - Winter 2016
+#
+# Should only be able to read identifiers
+read "should_fail";
+

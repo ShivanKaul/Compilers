@@ -1,0 +1,9 @@
+# Invalid Program 1
+# Maxim Gorshkov
+# 260397155
+#
+# Error: String contains characters which are invalid
+
+var invalid: string;
+
+invalid = "abc\|";

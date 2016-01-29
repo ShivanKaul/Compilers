@@ -1,0 +1,18 @@
+# make sure .53 and 100. are valid floats
+# -------  000123
+# above comment should be ignored
+
+var x_53 : float;
+var count : int;
+
+x_53 = .53;
+count=3;
+while count do
+count = count - 1;
+x_53 = -x_53;
+x_53 = 100. - -54;
+x_53 = count + count - x_53 * 100 /(100. - -43.);
+done
+print x_53;
+read x_53;
+

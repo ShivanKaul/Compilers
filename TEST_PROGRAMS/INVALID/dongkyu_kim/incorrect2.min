@@ -1,0 +1,14 @@
+# incorrect 2
+
+var x: int;
+var y: int;
+var z: int;
+
+x = 1;
+y = 2;
+z = x + y;
+
+if x y then
+    print z;
+endif
+

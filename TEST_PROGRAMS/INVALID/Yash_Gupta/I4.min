@@ -1,0 +1,15 @@
+var Harvard:int;
+var MIT:float;
+var CMU:int;
+CMU=0-0;
+while MIT do CMU = 1234; done
+if Harvard then CMU = (MIT - CMU + Harvard - Cornell / Columbia / (Brown/CalTech*Imperial) ); else MIT = 0.0 ; endif
+read MIT;
+print "CMU people are QUANTs"
+while CMU do
+{
+
+print "Harvard is my fav";
+} done
+
+

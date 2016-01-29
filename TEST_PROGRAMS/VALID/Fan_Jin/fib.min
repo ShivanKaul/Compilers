@@ -1,0 +1,22 @@
+# This computes the fib sequence for n = 20
+
+var f1: int;
+var f2: int;
+var n: int;
+var sum: int;
+
+f1 = 1;
+f2 = 1;
+n = 20;
+sum = 0;
+
+print f1;
+print f2;
+
+while n do
+  sum = f1 + f2;
+  print sum;
+  f1 = f2;
+  f2 = sum;
+  n = n - 1;
+done

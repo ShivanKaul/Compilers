@@ -1,0 +1,29 @@
+# Calculates and prints the nth fibonacci number (n > 0 and starting from 0).
+
+var n: int;
+var fib: int; var fibMinus1: int; var fibMinus2: int;
+var iter: int;
+
+read n;
+
+if n - 1 then
+	print 0;
+else
+	if n - 2 then
+		print 1;
+	else
+		fibMinus1 = 1; fibMinus2 = 0;
+		iter = n - 2;
+
+		while iter do
+			fib = fibMinus1 + fibMinus2;
+			fibMinus2 = fibMinus1;
+			fibMinus1 = fib;
+			iter = iter - 1;
+		done
+
+		print fib;
+	endif
+endif
+
+

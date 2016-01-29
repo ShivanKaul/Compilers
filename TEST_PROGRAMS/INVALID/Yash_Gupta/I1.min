@@ -1,0 +1,7 @@
+#comment 1 
+var ya432 :int;
+while x do {print x; print yahoo; print "SOMETHING INA STRING"; read y;} done
+var x:float; var y:int;
+if x then y; else y; endif
+
+

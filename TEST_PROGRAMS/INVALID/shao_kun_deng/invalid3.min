@@ -1,0 +1,7 @@
+#interleaved if and while
+
+if 1 then
+	while 1 do
+		1+1;
+endif
+	done

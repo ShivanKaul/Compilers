@@ -1,0 +1,10 @@
+# Invalid Program 4
+# Maxim Gorshkov
+# 260397155
+#
+# Error: A semicolon after done
+
+while x do
+   y = y * 2.0;
+   x = x - 1;
+done;

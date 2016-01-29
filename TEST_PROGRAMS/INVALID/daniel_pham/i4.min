@@ -1,0 +1,7 @@
+# Declarations after statements
+var x: int;
+
+print x;
+
+var y: int;
+

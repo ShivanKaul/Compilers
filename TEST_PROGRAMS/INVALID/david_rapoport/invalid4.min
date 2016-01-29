@@ -1,0 +1,8 @@
+# semicolon at the end of while loop
+var x : float;
+
+while 1 do
+ x = 3.9;
+done;
+
+x = 4.3;

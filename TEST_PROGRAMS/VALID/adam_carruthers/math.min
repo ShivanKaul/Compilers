@@ -1,0 +1,22 @@
+print "Lets do some math!";
+print "Enter two numbers and theyll be mathed.";
+read x;
+read y;
+
+# Test bracket implementation:
+print (x + 3) * y;
+
+# Test unary - implementation:
+print --(--y);
+
+# Test associativity:
+print x * y + -y / x;
+
+# Test float literals:
+print 0.4 + .4 + 4.;
+
+# Not technically math, but whatevs
+while "math" do
+	print "mathing..." + 6.30;
+done
+

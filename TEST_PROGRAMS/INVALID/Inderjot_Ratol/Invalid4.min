@@ -1,0 +1,14 @@
+#checking float values,strings and more on expressions 
+
+var a: int;
+var b : float;
+var c: string;
+
+a=10;
+b= 00.0023;
+c="dgvHSGvs234?,";
+c="hdv%$";
+
+a=((a-b)*(a/b)+3-5);
+if a else b=1; endif
+print a;

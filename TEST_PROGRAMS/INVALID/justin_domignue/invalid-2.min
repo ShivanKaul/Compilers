@@ -1,0 +1,5 @@
+# Declarations should all come before statements
+var x: int;
+x = x + 1;
+var y: float; # error
+

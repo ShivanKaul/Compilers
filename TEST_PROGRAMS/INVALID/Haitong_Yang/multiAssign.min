@@ -1,0 +1,7 @@
+#parsing error : multiple assignment
+
+var x : float;
+var y: float;
+
+x=y=7.1;
+

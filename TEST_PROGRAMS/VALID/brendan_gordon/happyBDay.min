@@ -1,0 +1,28 @@
+var count: int;
+var name: string;
+var toYou: int;
+var i: int;
+
+count=3;
+toYou = 2;
+read name;
+
+
+
+while count do
+    print "happy birthday to you";
+    count = count -1;
+    toYou = toYou-1;
+
+    if toYou then 
+        i=i+1;
+    else
+        print "happy birthday dear";
+        print name;
+        print "happy birthday to you";
+        toYou = toYou+1;
+    endif
+done
+
+    
+

@@ -1,0 +1,4 @@
+# testing reading an expression
+var y: string;
+
+read "y";

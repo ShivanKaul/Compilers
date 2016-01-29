@@ -1,0 +1,5 @@
+# MiniLang is case sensitive (according to the reference compiler).
+while x DO
+	print x;
+DONE;
+

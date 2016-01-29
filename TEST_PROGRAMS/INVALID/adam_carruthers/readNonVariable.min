@@ -1,0 +1,4 @@
+read "whoops";
+read 5;
+read 3.14;
+

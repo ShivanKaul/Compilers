@@ -1,0 +1,5 @@
+# variable not declared before use
+
+x = 10;
+var x : int;
+

@@ -1,0 +1,11 @@
+# if is not a statement 
+var x: int;
+
+x = 1;
+
+if x then
+	print "true";
+else
+	print "false";
+endif;
+

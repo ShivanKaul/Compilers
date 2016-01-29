@@ -1,0 +1,5 @@
+#Declaration after statement
+var x : int;
+x = 10;
+var y : float;
+

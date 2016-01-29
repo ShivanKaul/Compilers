@@ -1,0 +1,6 @@
+# Can't interleave complex statements
+
+if x then
+  while y do
+endif
+  done

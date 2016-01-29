@@ -1,0 +1,7 @@
+# These reserved words don't have semicolon after.
+if x then;
+else;
+endif;
+while x do;
+done;
+

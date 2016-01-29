@@ -1,0 +1,5 @@
+# parsing error example - mixing statements and declarations
+
+var x: int;
+x = 5;
+var y: float;

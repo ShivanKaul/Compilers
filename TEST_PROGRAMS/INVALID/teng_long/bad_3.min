@@ -1,0 +1,6 @@
+# ';' after while
+
+while x do
+  x = x - 1;
+done;
+

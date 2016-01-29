@@ -1,0 +1,4 @@
+# Two vars don't make a right.
+
+var var: string;
+

@@ -1,0 +1,33 @@
+# Computes number of subsets of size 'b' from a set of 'a' items
+
+var a: int;
+var b: int;
+var c: int;
+var answer: int;
+
+print "enter value for a ";
+read a;
+
+print "enter value for b ";
+read b;
+
+c = a - b;
+answer = 1;
+
+while a-b do
+	answer = answer * a;
+	a = a - 1;
+done
+
+while c do
+	answer = answer / c;
+	c = c - 1;
+done
+
+print a;
+print " take ";
+print b;
+print " is ";
+print answer;
+
+

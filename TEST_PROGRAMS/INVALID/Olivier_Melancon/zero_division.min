@@ -1,0 +1,6 @@
+var n: float;
+
+n = 10.;
+n = n / 00.
+
+# You can only divide by one zero, not two

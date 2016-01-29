@@ -1,0 +1,5 @@
+var n: int;
+
+while n = 1 do
+	print "If you see this, magic occured."
+done

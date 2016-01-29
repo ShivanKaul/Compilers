@@ -1,0 +1,12 @@
+# this invalid program tries to use an unterminated loop
+
+
+var z: int;
+
+z = 100;
+
+while z do
+    z = 1;
+
+print z;
+

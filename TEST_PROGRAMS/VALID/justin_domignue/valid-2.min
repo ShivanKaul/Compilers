@@ -1,0 +1,25 @@
+# Prints Hello World 5 times, asks for name and prints it 5 times
+
+var x: int;
+var hello: string;
+var yourname: string;
+var name: string;
+
+x = 5;
+hello = "Hello world!";
+yourname = "What is your name?";
+
+while x do
+  print hello;
+  x = x - 1;
+done
+
+print yourname;
+read name;
+
+x = 5;
+while x do
+  print name;
+  x = x - 1;
+done
+

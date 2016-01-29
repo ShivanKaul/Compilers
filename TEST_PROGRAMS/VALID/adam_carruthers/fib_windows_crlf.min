@@ -1,0 +1,49 @@
+# Declarations
+var x: int; # Which fibonacci number to calculate
+var last: int;
+var secondlast: int;
+var notdone: int;
+var i: int; # Current fibonacci number index
+var result: int;
+
+# Statements
+read x;
+result = 0;
+
+# If x is 0 or 1 then we need to set result to the hardcoded values
+if (x - 1) then
+	# x != 1
+	if x then
+		# x != 0 && x != 1, calculate fib
+		notdone = 1;
+		last = 1;
+		secondlast = 0;
+		i = 2;
+
+		while (notdone) do
+			result = last + secondlast;
+
+			# Set up secondlast and last for next round
+			secondlast = last;
+			last = result;
+
+			if (i - x) then
+				# i != x
+				i = i + 1;
+			else
+				# i == x
+				notdone = 0;
+			endif
+		done
+	else
+		# x == 0
+		result = 0;
+	endif
+else
+	# x == 1
+	result = 1;
+endif
+
+print "Fibonacci number is";
+print result;
+

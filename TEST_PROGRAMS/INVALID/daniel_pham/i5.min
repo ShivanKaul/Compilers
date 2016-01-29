@@ -1,0 +1,5 @@
+# Unclosed strings
+
+x = "string;
+
+

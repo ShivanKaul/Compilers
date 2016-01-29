@@ -1,0 +1,15 @@
+var x:float;
+var y:float;
+
+while x do
+  print x;
+done
+
+#Print these statements depending on x value
+
+if x then
+  print "x is greater than 0"; #Print if x greater than 0
+else
+  print "x is equal to 0";
+endif
+

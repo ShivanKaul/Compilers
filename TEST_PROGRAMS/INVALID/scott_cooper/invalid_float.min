@@ -1,0 +1,9 @@
+# Scott Cooper
+# 260503452
+# COMP520 - Winter 2016
+#
+# Should not allow multiple zeros in the integral part of a float
+
+var x : float;
+x = 00.;
+

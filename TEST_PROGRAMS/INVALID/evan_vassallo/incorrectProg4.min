@@ -1,0 +1,9 @@
+#no semicolon after variable assignment
+var x: int;
+
+x = 5
+
+if x then
+  x = x + 1;
+endif
+

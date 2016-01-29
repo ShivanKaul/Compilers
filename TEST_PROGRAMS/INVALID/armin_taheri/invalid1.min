@@ -1,0 +1,8 @@
+#no parens in strings
+
+var x: string;
+
+x = "computing Ackerman(10)";
+
+print x;
+

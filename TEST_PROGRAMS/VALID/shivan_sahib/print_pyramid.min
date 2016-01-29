@@ -1,0 +1,13 @@
+# Print pyramid of height defined by x
+var y : int;
+read x;
+
+while x do
+	y = x;
+	while y do
+		print ".";
+		y = y - 1;
+	done
+	x = x - 1;
+done
+

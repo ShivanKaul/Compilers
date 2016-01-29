@@ -1,0 +1,13 @@
+#declaring variable in the middle if code and checking computation
+
+var a: float;
+a=20;
+
+print(a);
+a=a*2+(3/a)+5;
+
+var b: int; #should throw an error
+
+read (b);
+print(b);
+

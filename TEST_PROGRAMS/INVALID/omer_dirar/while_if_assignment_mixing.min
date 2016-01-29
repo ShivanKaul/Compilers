@@ -1,0 +1,19 @@
+#Syntactically incorrect: incorrect syntax for assignment
+
+var x : int;
+var y : float;
+var z : float;
+
+read x;
+read y;
+read z;
+
+y = if x then 
+        print z;
+    else 
+        while x + y do
+            print x - y;
+        done
+    endif;
+
+

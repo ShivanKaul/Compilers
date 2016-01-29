@@ -1,0 +1,31 @@
+# this a comment a;slkdj 1po34j(#$^%&^*&(*(A)))
+
+var x: int; # another comment
+var variable: float;
+
+x = 1;
+y = y;
+
+if x - y then
+	x = 3;
+	while y * 5 do
+		x = x - - z;
+	done
+else
+	y = 0;
+endif
+
+print "this is a string";
+
+# All the forms of floats
+y = 1.0;
+y = .1;
+y = 1.;
+
+#weird things
+if x * "string" then
+	while x do
+	done
+else
+endif
+

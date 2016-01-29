@@ -1,0 +1,6 @@
+#invalid token
+
+var x : int;
+x = 5;
+
+?;

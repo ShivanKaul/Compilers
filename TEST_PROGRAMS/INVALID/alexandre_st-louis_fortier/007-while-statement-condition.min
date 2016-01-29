@@ -1,0 +1,4 @@
+while print 0 do
+    print 1;
+done
+

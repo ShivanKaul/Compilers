@@ -1,0 +1,3 @@
+# Expression as variable name
+var x+1: int;
+

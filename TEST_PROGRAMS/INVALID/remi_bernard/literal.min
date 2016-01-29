@@ -1,0 +1,3 @@
+# Invalid floating-point literal
+print .;
+

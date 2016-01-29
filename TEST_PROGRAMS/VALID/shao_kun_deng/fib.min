@@ -1,0 +1,20 @@
+# Compute the n-th fibonnacci number
+
+var n : int;
+var f1 : int;
+var f2 : int;
+var fnext : int;
+
+# would be cool if we had a read function so it doesn't have to be hardcoded
+n = 5;
+f1 = 1;
+f2 = 1;
+
+while n do
+	fnext = f1 + f2;
+	f1 = f2;
+	f2 = fnext;
+	n = n - 1;
+done
+
+print n;

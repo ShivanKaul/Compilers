@@ -1,0 +1,8 @@
+var invalidfloat: float;
+
+invalidfloat = .;
+invalidfloat = 00.0000;
+
+# If the "." wasn't escaped in the float regex
+invalidfloat = 0k0;
+

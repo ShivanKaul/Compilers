@@ -1,0 +1,31 @@
+# Ghetto estimation of pi. Given random coordinates in [0,1], we can find their
+# distance to the origin, and thus wether they fall in a quarter of circle that
+# has radius 1. Thus the proportion of coordinates with distance < 1 is pi / 4.
+# The ghetto part is that the user must enter the random coordinates themselves.
+
+var x: float; var y: float; var pi: float;
+var d_square: int;
+var i: int; var in: int; var out: int;
+var m1: string;
+m1 = "Enter a number of iterations";
+
+print m1; read i;
+
+while i do
+  i = i - 1;
+  print "Enter a random pair of coordinates in the interval 0,1";
+  read x; read y;
+
+  # Here hopefully d_square will be truncated to 0, 1 or 2
+  d_square = x * x + y * y;
+  if d_square then
+    out = out + 1;
+  else
+    in = in + 1;
+  endif
+done
+
+pi = 4. * in / (in + out);
+
+print "The value of pi is"; print pi;
+

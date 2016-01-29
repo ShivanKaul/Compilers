@@ -1,0 +1,7 @@
+# Invalid Program 2
+# Maxim Gorshkov
+# 260397155
+#
+# Error: Line is missing a semicolon
+
+var invalid: string

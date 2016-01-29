@@ -1,0 +1,4 @@
+if x then
+print x;
+end
+

@@ -1,0 +1,19 @@
+#This program just prints the fraction 1/(2^n) in decimal form.
+
+var message : string;
+var counter : int;
+var fraction : float;
+
+message = "The fraction is ";
+counter = 8;
+fraction = 1.0;
+
+while counter do
+  counter = counter-1;
+  # error: forgot ';' at the end of the next line
+  fraction = fraction/2
+
+  print message+fraction;
+done
+
+

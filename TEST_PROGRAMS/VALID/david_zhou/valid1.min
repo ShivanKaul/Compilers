@@ -1,0 +1,27 @@
+# compute n fibonnaci numbers
+
+var n: int;
+var x1: int;
+var x2: int;
+var temp: int;
+var p: float;
+
+n = 10;
+x1 = 0;
+x2 = 1;
+
+while n do
+  temp = x2 + x1;
+  print temp;
+  x1 = x2;
+  x2 = temp;
+  n = n - 1;
+done
+
+print "Value of phi after ";
+print n;
+print " iterations is ";
+
+p = x2 / x1;
+print p;
+

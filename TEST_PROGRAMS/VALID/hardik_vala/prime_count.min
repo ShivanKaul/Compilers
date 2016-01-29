@@ -1,0 +1,43 @@
+# Counts the number of primes less than or equal to x (usually denoted by pi(x)), x > 0, using the crude approximation given by the prime number theorem (x/lnx).
+
+var x: float;
+var xMinus1: float;
+var lnx: float;
+var term1: float;
+var isEvenTerm: int;
+var iter1: int; var iter2: int;
+
+read x;
+xMinus1 = x - 1.;
+
+# Approximate lnx using the first 100 terms of the Mercator series.
+lnx = 0;
+isEvenTerm = 0;
+# Iterate backwards over the series terms.
+iter1 = 100;
+while iter1 do
+	# Calculate (x - 1)^iter1.
+	term = 1;
+	iter2 = iter1;
+	while iter2 do
+		term = term * xMinus1;
+		iter2 = iter2 - 1;	
+	done
+
+	term = term / iter1;
+
+	# Substract if its an even term in the sequence, add otherwise
+	if isEvenTerm then
+		lnx = lnx - term;
+		isEvenTerm = 1;
+	else
+		lnx = lnx + term;
+		isEvenTerm = 0;
+	endif
+
+	iter1 = iter1 - 1;
+done
+
+print x / lnx;
+
+

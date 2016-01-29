@@ -1,0 +1,15 @@
+var s: string;
+var t: string;
+var u: string;
+
+#Second correct program read in the users name print it with English hello and upsidedown calculator hello
+
+s = "Hello!";
+t = "43110";
+
+read u;
+
+print s;
+print u;
+print t;
+

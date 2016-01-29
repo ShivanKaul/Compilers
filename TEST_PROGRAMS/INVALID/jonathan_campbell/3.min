@@ -1,0 +1,7 @@
+var x : int;
+
+x = x + 2;
+
+var y : int;
+
+y = y + 2;

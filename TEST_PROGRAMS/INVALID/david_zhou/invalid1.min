@@ -1,0 +1,7 @@
+# missing then
+
+if 0
+  print 5;
+else
+  print 6;
+endif

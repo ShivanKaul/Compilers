@@ -1,0 +1,14 @@
+#This program will test missing done from a while statement !!!
+#This program will test accepting read and print !!
+#This program will test accepting expressions in a print statement!!
+
+var x: int;
+
+read y;
+print (3+2/5*7/9+(9+0.45)+.56+78.9);
+x=2.03;
+y=((4+3)+5+(7/9)*8);
+
+while y do 
+	x=x+1;
+

@@ -1,0 +1,3 @@
+# Error in syntax
+vor identifier: string; # vor -> var
+

@@ -1,0 +1,9 @@
+#while loop with semicolon after done
+var x: int;
+
+x = 3;
+
+while x do
+  x = x - 1;
+done;
+

@@ -1,0 +1,26 @@
+# Interactive user menu selection
+
+var s : int;
+var t : int;
+
+t = 1;
+
+
+while t do
+    print "Welcome. Please select 0 to exit or press any other number to leave a message.";
+    print "x. Leave a message.";
+    print "0. EXIT";
+    read s;
+
+    if s then
+        print "Leave a message after the beep. BEEEEEP!";
+        read m;
+        print "Exiting...";
+        t = 0;
+    else 
+        print "Exiting...";
+        t = 0;
+    endif
+done
+
+

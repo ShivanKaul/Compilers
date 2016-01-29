@@ -1,0 +1,7 @@
+# scanning error example - unmatched quotes
+
+var x: string;
+
+x = "this string is not closed;
+
+print x;

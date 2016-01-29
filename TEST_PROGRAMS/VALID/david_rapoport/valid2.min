@@ -1,0 +1,24 @@
+# loop and print on if else
+# no eol after comment
+var val : int;
+var target : int;
+var greeting : string;
+var temp : int;
+
+greeting = "WE FOUND IT!";
+target = 50;
+val = 100;
+read val;
+while val do
+  temp = val - target;
+  if temp then
+     temp = temp;
+  else 
+     print greeting;
+  endif
+  val = val - 1;
+done
+
+
+
+# done with the program

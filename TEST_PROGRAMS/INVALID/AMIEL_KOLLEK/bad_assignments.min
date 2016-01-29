@@ -1,0 +1,17 @@
+# Contains bad assignments.
+# ---
+# This invalid program declares a new variable after the initial declarations are over
+# It also tries to do multiple assignments and use the '+=' Operator
+
+var x: int;
+var y: int;
+
+x = y = 10;
+y += 10;
+
+var z: int;
+
+z = x + y;
+
+print z;
+

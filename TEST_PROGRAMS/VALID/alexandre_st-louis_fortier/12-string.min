@@ -1,0 +1,9 @@
+print "";
+print "Hello";
+print "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !?,.";
+print "abcdefghijklmnopqrstuvwxyz";
+print "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+print "0123456789";
+print " !?,.";
+print "0.00";
+

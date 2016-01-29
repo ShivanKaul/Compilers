@@ -1,0 +1,11 @@
+# assignment isn't an expression
+
+var n: int;
+
+n = 10;
+
+while (n = n - 1) do
+	print n;
+done
+
+

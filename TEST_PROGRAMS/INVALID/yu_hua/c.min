@@ -1,0 +1,6 @@
+while 1 do
+  # nothing
+  if -1 then
+  endif
+done
+.

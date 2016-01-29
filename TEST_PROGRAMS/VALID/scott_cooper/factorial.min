@@ -1,0 +1,19 @@
+# Scott Cooper
+# 260503452
+# COMP520 - Winter 2016
+#
+# Print all of the prime factors of x
+# The semantics of this depend on if casting between floats
+# and integers is allowed (this assumes they are). 
+
+var x : int;
+var out : int;
+
+x = 100;
+out = x;
+
+while x do
+    out = out * x;
+    x = x - 1;
+done
+

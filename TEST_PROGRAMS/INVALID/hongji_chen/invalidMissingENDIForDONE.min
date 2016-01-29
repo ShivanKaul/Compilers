@@ -1,0 +1,9 @@
+#Missing endif or done
+
+var a : int;
+
+while a do 
+	if a then
+		a = a+1;
+	done
+endif

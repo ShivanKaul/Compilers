@@ -1,0 +1,10 @@
+#incorrect program with parsing error: semi colon after endif
+
+var x : int;
+
+x=0;
+
+if(x) then 
+	x = x+6; 
+endif;
+

@@ -1,0 +1,35 @@
+# Computes the modulo of user inputted ints 'b' % 'a'
+
+var a : int;
+var b : int;
+
+print "Computes b mod a for postive nonzero integers a and b. Please enter b";
+read a;
+print "Please enter a";
+read b;
+
+# Supposing that the semantics of 'while' and 'if' statements are such that when conditioned on an
+# int, they break when the int is less than or equal to 0:
+
+if a*b then
+
+    if a-b then
+        print "Entered a greater than b, answer";
+        print b;
+    else
+
+        while b-a do  
+            b = b - a;
+        done
+
+        print "Answer";
+        print b;
+
+    endif
+
+else
+    print "Entered number is less than or equal to 0. Exiting....";
+endif
+
+
+

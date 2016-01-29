@@ -1,0 +1,5 @@
+# Invalid program 1: declaration after statement.
+
+x = 1.0;
+var x: float;
+print x;

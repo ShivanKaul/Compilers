@@ -1,0 +1,12 @@
+# testing while loop-changing do and done
+var x: int;
+var y: float;
+
+x=10;
+y=0;
+
+while x done
+	y=y+1;
+do
+
+print x;

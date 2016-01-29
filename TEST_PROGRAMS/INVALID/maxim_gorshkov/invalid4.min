@@ -1,0 +1,9 @@
+# Invalid Program 4
+# Maxim Gorshkov
+# 260397155
+#
+# Error: An integer has a leading zero
+
+var x : int;
+
+x = 030;

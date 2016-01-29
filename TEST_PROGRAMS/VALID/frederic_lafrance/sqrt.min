@@ -1,0 +1,24 @@
+# Compute the square root of s by the Babylonian method
+
+# We have no comparison operators (can only compare against 0),
+# so use ints.
+var s: int;
+var x: int;
+var x1: int;
+
+x = 0;
+x1 = 2; # First guess is an arbitrary number
+
+print "Enter a number";
+read s;
+
+# Keep going until our guesses stop improving.
+while x1 - x do
+  x = x1;
+  x1 = (x + s/x) / 2;
+done
+
+print "The square root is";
+print x1;
+
+# And we're done!

@@ -1,0 +1,27 @@
+# This is the second valid program.
+
+var x: float;
+var y: float;
+var z: float;
+var res: int;
+var s: string;
+
+x = 3.;
+y = 0.3;
+z = .3;
+res = 3; # another comment
+s = "program executed incorrectly!";
+
+if x / 10 - y then
+  print s;
+else
+  if z * 10 - x then
+    print s;
+  else
+    if -res then
+      print s;
+    endif
+  endif
+endif # end all ifs
+
+# end of program.

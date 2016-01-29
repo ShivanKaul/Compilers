@@ -1,0 +1,36 @@
+var x:int;
+var random:int;
+var anything:float;
+
+# this part is a comment first
+read x;			# this part comes later
+read random; 
+
+if x then
+else
+endif
+
+if x then
+endif
+
+anything = 5.0;
+
+while x do
+done
+
+if (random - x)*2 then
+	print random;
+endif
+
+if x then
+	while random do
+     		print x;
+		x = x + 1;
+		random = random - 1;
+	done
+else
+	print x;
+endif
+
+x = -(x+1)*5;
+x = ((random/x)--2);

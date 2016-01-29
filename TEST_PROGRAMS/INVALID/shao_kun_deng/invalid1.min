@@ -1,0 +1,7 @@
+#using keyword as id
+
+var float : int;
+
+if float then
+	1;
+endif

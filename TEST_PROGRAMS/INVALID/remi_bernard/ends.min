@@ -1,0 +1,7 @@
+# One too many 'endifs'
+if a then
+	if b then
+	endif
+endif
+endif
+

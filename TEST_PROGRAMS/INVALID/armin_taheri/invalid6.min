@@ -1,0 +1,4 @@
+#no lone expression
+
+var x: int;
+(3+2)*x + 1;

@@ -1,0 +1,36 @@
+#computes
+
+var x : string;
+var y : int;
+var u : float;
+var w : float;
+var z : float;
+var a : int;
+
+x = "Hello, we see if number formats are parsed correctly and output the value of the absolute value of a given variable in this example!?.,";
+
+print x;
+
+read z;
+y = -12;
+
+u = .23;
+w = 12.;
+z = 0.23;
+a = 1;
+
+if a then
+	y = -y;
+else
+	y = y;
+endif
+
+if a then
+	y = -y;
+endif
+
+x = y + (-5 + 7);
+
+while y do
+	print x;
+done

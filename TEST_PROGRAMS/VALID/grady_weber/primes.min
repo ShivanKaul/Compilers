@@ -1,0 +1,40 @@
+#determines if a entered number is prime or not. note: breaks on any number < 2.
+var input : int; 
+var inputCopy : int;
+var divisor : int;
+var isPrime : int;
+var divisorCopy : int;
+var isPositive : int;
+divisor = 2;
+isPrime = 1;
+isPositive = 1;
+print "enter a number";
+read input;
+while input - divisor do
+    inputCopy = input;
+    while isPositive do
+        inputCopy = inputCopy - divisor;
+        #check if negative or 0
+        if inputCopy then
+        else
+            #inputCopy = 0, divisor found
+            isPrime = 0;
+            isPositive = 0;
+        endif
+        divisorCopy = divisor - 1;
+        while divisorCopy do
+            if inputCopy + divisorCopy then
+            else
+               isPositive = 0; 
+            endif
+            divisorCopy = divisorCopy - 1;
+        done             
+    done
+divisor = divisor + 1;
+done
+if isPrime then
+    print "Prime number.";
+else
+    print "Not a prime number.";
+endif
+

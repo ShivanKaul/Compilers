@@ -1,0 +1,13 @@
+# Computes the factorial of x
+var x: int;
+var result: float;
+
+read x;
+result = 1.0;
+
+while x do
+	result = result * x;
+	result = x - 1;
+done
+
+print y;

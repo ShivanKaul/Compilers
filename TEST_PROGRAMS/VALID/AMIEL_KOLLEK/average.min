@@ -1,0 +1,48 @@
+# average.min
+# ----------
+#   This program calculates the average of a collection of numbers
+
+
+# variables for numbers
+var a: float;
+var b: float;
+var c: float;
+var d: float;
+var e: float;
+var f: float;
+
+# the number of variables
+var num_vars: int;
+
+# messages
+var msg: string;
+var err: string;
+
+# average
+var avg: float;
+
+msg = "The average is ";
+err = "You cannot average 0 variables";
+
+a = 12.1;
+b = 10.3;
+c = 16.7;
+d = 9.9;
+e = 13.0;
+f = 8.6;
+
+
+num_vars = 6;
+
+if num_vars then
+    avg = (a + b + c + d + e + f)/num_vars;
+    print msg;
+    print avg;
+else
+    print err;
+endif
+
+print f;
+
+
+

@@ -1,0 +1,24 @@
+# (inefficiently!) computes all primes up to & including max #
+#
+
+var max : int;
+var n : float;
+var i : float;
+var prime : int;
+
+read max;
+n = 2.0;
+while max - n + 1.0 do
+i = 2.0;
+prime = 1;
+while n - i*i + 1.0 do
+if (n / i) then
+i = i + 1.0;
+else
+i = n;
+prime = 0;
+endif
+done
+if prime then print n; endif
+n = n + 1.0;
+done

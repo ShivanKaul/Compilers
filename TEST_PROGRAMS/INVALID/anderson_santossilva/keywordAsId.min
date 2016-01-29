@@ -1,0 +1,5 @@
+#The keywords are also reserved words, meaning that that they can't be used to name variables.
+#This wasn't specified but the reference compiler works this way. 
+var while: string;
+print while;
+

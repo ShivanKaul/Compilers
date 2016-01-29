@@ -1,0 +1,21 @@
+var n: int;
+var sum1: int;
+var sum2: int;
+
+sum1 = 0;
+sum2 = sum1;
+n = 50;
+
+sum1 = n * (n + 1) / 2;
+
+while n do
+	sum1 = sum1 + n;
+	n = n - 1;
+done
+
+if sum1 - sum2 then
+	print "This is not good...";
+else
+	#This is clearly not going to work
+	print "I cannot believe it works";
+endif

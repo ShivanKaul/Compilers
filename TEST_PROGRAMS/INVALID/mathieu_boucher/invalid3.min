@@ -1,0 +1,7 @@
+#wrong order of declarations and statements
+
+var x : int;
+
+x = 6;
+
+var y : float;

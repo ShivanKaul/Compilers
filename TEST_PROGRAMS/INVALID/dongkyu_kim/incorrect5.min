@@ -1,0 +1,8 @@
+# incorrect 5
+
+var while: int;
+
+while = -1 + 4;
+
+print while;
+

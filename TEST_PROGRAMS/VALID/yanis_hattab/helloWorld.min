@@ -1,0 +1,20 @@
+# hello world and some unary minus operator tests program
+var x : int;
+
+var hello : string;
+
+var world : string;
+x = 3--3;
+x = --3;
+x = -5 * -3;
+x = -2 - -(-5 * -2);
+
+hello = "Hello ";
+
+world = "World!";
+
+
+print hello;
+print world;
+
+

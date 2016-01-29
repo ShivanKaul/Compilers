@@ -1,0 +1,7 @@
+# parsing error example - using a statment where an expression is needed
+
+var x: int;
+
+if x = 0 then
+	x = 1;
+endif

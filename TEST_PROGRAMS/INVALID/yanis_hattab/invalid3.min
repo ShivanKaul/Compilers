@@ -1,0 +1,10 @@
+var x : int;
+var y : float;
+
+while x 
+
+   y = y * 2.0;
+
+   x = x - 1;
+
+done

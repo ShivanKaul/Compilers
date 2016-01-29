@@ -1,0 +1,10 @@
+# WILL FAIL BECAUSE MISSING 'endif' (used 'done' instead)
+
+var x: int;
+
+x = 1;
+
+if x then
+  print "test";
+done
+

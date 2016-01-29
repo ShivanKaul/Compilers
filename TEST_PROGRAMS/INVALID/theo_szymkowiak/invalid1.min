@@ -1,0 +1,12 @@
+# WILL FAIL BECAUSE VAR DECLARED AFTER STATEMENTS
+
+var x: int;
+
+x = 1;
+
+if x then
+  print "OK";
+endif
+
+var y: int;
+

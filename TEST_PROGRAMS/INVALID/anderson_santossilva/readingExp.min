@@ -1,0 +1,3 @@
+# As print can print an EXP, one might forget to change this to the read command.
+read x-2+3*5;
+

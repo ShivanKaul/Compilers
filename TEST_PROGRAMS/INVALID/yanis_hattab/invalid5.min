@@ -1,0 +1,14 @@
+var y : float;
+
+#these are allowed
+y = 23.45;
+y = .45 ;
+y = 0.45 ;
+y = 23. ;
+
+#this one is not
+y = . ; 
+
+print y;
+
+read y;

@@ -1,0 +1,13 @@
+#compute n factorial
+var n: int;
+var f: int;
+
+n = 5;
+f = 1;
+
+while n do
+f = f * n;
+n = n - 1;
+done
+
+print f;

@@ -1,0 +1,23 @@
+# This program computes the gcd of 2 numbers
+
+var a:int;
+var b:int;
+var tmp:int;
+
+read a;
+read b;
+
+# Tests the validity of the empty while loop
+while 0 do done
+ 
+# Tests the validity of the empty if statement
+if 0 then endif
+
+while b do
+    tmp = a;
+    a = b;
+    b = b - --b / tmp * tmp; # Computing remainder
+done
+
+print a;
+

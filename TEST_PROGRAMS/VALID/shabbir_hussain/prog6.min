@@ -1,0 +1,3 @@
+var s: string;
+s="while x do smt";
+

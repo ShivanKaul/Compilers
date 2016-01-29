@@ -1,0 +1,12 @@
+#wrong number formats
+
+var x : int;
+var y : float;
+var z : float;
+
+x = 05;
+y = -00.12;
+z = -.12;
+z = -0012.;
+
+

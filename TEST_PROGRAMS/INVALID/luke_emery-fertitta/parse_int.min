@@ -1,0 +1,4 @@
+# parsing error example - invalid int format
+
+var x: int;
+x = 010;

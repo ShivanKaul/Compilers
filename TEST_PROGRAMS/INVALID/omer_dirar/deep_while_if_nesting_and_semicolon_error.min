@@ -1,0 +1,28 @@
+# Syntactically incorrect: while and if statements do not end with semicolon
+
+var x : int;
+
+x = 8;
+
+while x do 
+    if x - 1 then
+        if x - 1 then 
+            while x - 1 do
+                if x - 1 then
+                    while x - 1 do
+                        while x - 1 do
+                            while x - 1 do
+                                print x;
+                            done;
+                        done
+                    done
+                endif
+            done
+        else 
+            print x + 1;
+        endif
+    else
+        print x + 2;
+    endif
+done
+

@@ -1,0 +1,24 @@
+## COMMENTS LIKE THIS SHOULD WORK!
+
+#DECLARATIONS
+
+var int1:	int;
+var float1:	float;
+
+#PROGRAM
+
+int1 = 1;
+float1 = .0;
+
+float1 = 1.;
+
+float1 = 1.0;
+
+while int1 +8
+do
+float1 = float1 + -.1;
+int1 = (-1 +8) - -int1;
+done
+
+#This will surely loop forever..?
+

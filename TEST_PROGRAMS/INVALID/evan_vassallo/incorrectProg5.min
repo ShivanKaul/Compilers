@@ -1,0 +1,6 @@
+#operation character applied consecutively
+
+var x: int;
+
+x = x ++ 4;
+

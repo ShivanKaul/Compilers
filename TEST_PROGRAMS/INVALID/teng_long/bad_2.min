@@ -1,0 +1,6 @@
+# ';' after endif
+
+if x then
+  x = 10;
+endif;
+

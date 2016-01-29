@@ -1,0 +1,8 @@
+var x: int;
+
+x = 10;
+
+var y:int;
+
+y = 10;
+

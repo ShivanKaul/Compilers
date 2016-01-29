@@ -1,0 +1,11 @@
+# COMPUTE SQUARE OF x
+
+var x: int;
+var r: int;
+
+read x;
+
+r = x * x;
+
+print r;
+
