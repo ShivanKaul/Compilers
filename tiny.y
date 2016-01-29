@@ -66,6 +66,7 @@ stmt:		T_id '=' exp ';'
 		| T_read T_id ';'
 		| if_stmt
 		| while_stmt
+		|
 
 if_stmt:	T_if exp T_then stmt_list T_endif
 		| T_if exp T_then stmt_list T_else stmt_list T_endif
@@ -89,7 +90,7 @@ exp:		T_int_lit
 int main(int argc, char* argv[]) {
 	// Debug?
 	if (argc < 2) yydebug = 0; 
-	else yydebug = strcmp("-debug", argv[1]) ? 0 : 1;
+	else yydebug = strcmp("-d", argv[1]) ? 0 : 1;
 
 	if (yyparse()) {
 		printf("INVALID.\n");

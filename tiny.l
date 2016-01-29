@@ -10,6 +10,8 @@
 %%
 [ \t]+		/* ignore tabs */;
 \n			{ }; 
+\r\n			{ };
+\r			{ };
 "#".*		/* comment */;
 
 "*"			return '*';
@@ -40,18 +42,20 @@
 "else"		return T_else;
 "endif"		return T_endif;
 
-\"[a-zA-Z0-9?! .]*\" {
+\"[a-zA-Z0-9?!, .]*\" {
 	yylval.stringconst = (char *) malloc (strlen (yytext) + 1);
 	sprintf (yylval.stringconst, "%s", yytext); 
 	return T_string_lit; 
 }
 
-(0|[1-9]*)\.[0-9]* {
+((0|[1-9][0-9]*)\.[0-9]*|(\.[0-9]+)) {
 	yylval.floatconst = atof (yytext);
 	return T_float_lit;
 }
 
-[a-zA-Z_][a-zA-Z0-9_]* { 
+\"*\" return yytext[0];
+
+[a-zA-Z_][a-zA-Z0-9_]* {
 	yylval.stringconst = (char *) malloc (strlen (yytext) + 1);
 	sprintf (yylval.stringconst, "%s", yytext); 
 	return T_id; 
@@ -62,8 +66,6 @@
 	return T_int_lit;
 }
 
-
-
-.         /* ignore */;
+. return yytext[0];
 %%
 
