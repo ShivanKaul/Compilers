@@ -1,4 +1,4 @@
-CFLAGS = -ll
+CFLAGS = -ll 
 CFLAGSw = $(CFLAGS) -w
 
 compileall: 

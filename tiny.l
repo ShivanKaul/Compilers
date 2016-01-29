@@ -8,6 +8,7 @@
 
 %option yylineno
 %%
+
 [ \t]+		/* ignore tabs */;
 \n			{ }; 
 \r\n			{ };

@@ -7,8 +7,8 @@ extern char *yytext;
 extern int yylineno;
 int yydebug;
 
-void yyerror() {
-	fprintf(stderr, "Syntax error before %s on %d. ", yytext, yylineno); 
+void yyerror(const char* error) {
+	fprintf(stderr, "Error before %s on %d. %s", yytext, yylineno, error); 
 }
 %}
 
@@ -47,26 +47,23 @@ void yyerror() {
 %left '*' '/'
 %% 
 
-prog:		decl_list
-    		| decl_list stmt_list 
-    		| stmt_list 
+prog:		decl_list stmt_list 
 
-decl_list:	decl
-		| decl_list decl
+decl_list:	decl_list decl
+	 	|
 
 decl:		T_var T_id ':' T_float ';'
 		| T_var T_id ':' T_int ';'
 		| T_var T_id ':' T_string ';'
 
-stmt_list:	stmt
-	 	| stmt_list stmt
+stmt_list:	stmt_list stmt
+		|
 
 stmt:		T_id '=' exp ';'
     		| T_print exp ';'
 		| T_read T_id ';'
 		| if_stmt
 		| while_stmt
-		|
 
 if_stmt:	T_if exp T_then stmt_list T_endif
 		| T_if exp T_then stmt_list T_else stmt_list T_endif
