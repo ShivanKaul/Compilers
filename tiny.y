@@ -1,14 +1,15 @@
 %{
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "tree.h"
 
 extern char *yytext;
 extern int yylineno;
 int yydebug;
 
+extern EXP *prog;
+
 void yyerror(const char* error) {
-	fprintf(stderr, "Error before %s on %d. %s", yytext, yylineno, error); 
+	fprintf(stderr, "Error before %s on %d. ", yytext, yylineno); 
 }
 %}
 
@@ -16,6 +17,9 @@ void yyerror(const char* error) {
 	float floatconst;
 	int intconst;
 	char *stringconst;
+	struct EXP *exp;
+	struct DECL *decl;
+	struct STMT *stmt;
 }
 
 /* Formatting semantic values.  */
@@ -40,6 +44,7 @@ void yyerror(const char* error) {
 %token <stringconst> T_then
 %token <stringconst> T_else
 %token <stringconst> T_endif
+%type <exp> exp prog /* change! */
 
 %start prog
 
@@ -48,6 +53,8 @@ void yyerror(const char* error) {
 %% 
 
 prog:		decl_list stmt_list 
+    		| exp /* change! */
+			{ prog = $1; }
 
 decl_list:	decl_list decl
 	 	|
@@ -71,28 +78,25 @@ if_stmt:	T_if exp T_then stmt_list T_endif
 while_stmt:	T_while exp T_do stmt_list T_done
 
 exp:		T_int_lit
+   			{ $$ = makeEXPint_lit ($1); }
    		| T_string_lit
+			{ $$ = makeEXPstring_lit ($1); }
 		| T_float_lit
+			{ $$ = makeEXPfloat_lit ($1); }
 	   	| T_id
+			{ $$ = makeEXPid ($1); }
 		| '(' exp ')'
+			{ $$ = $2; }
 		| exp '+' exp 
+			{ $$ = makeEXPplus ($1, $3); }
 		| exp '-' exp 
+			{ $$ = makeEXPminus ($1, $3); }
 		| exp '*' exp
+			{ $$ = makeEXPtimes ($1, $3); }
 		| exp '/' exp
+			{ $$ = makeEXPdiv ($1, $3); }
 		| '-'  exp      %prec  '*'
+			{ $$ = makeEXPminus (0, $2); }
 ;
 
 %%
-
-int main(int argc, char* argv[]) {
-	// Debug?
-	if (argc < 2) yydebug = 0; 
-	else yydebug = strcmp("-d", argv[1]) ? 0 : 1;
-
-	if (yyparse()) {
-		printf("INVALID.\n");
-	}
-	else {
-		printf("VALID.\n");
-	}
-}

@@ -3,7 +3,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-/* extern int lineno; */
 %}
 
 %option yylineno

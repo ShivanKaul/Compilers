@@ -1,5 +1,8 @@
 CFLAGS = -ll 
 CFLAGSw = $(CFLAGS) -w
+FILES = lex.yy.c tiny.tab.c tree.c pretty.c main.c memory.c
+OUTPUT =  minic
+CC = gcc 
 
 compileall: 
 	make process
@@ -15,10 +18,10 @@ process: tiny.l tiny.y
 	flex tiny.l
 
 compile:
-	gcc -o minic lex.yy.c tiny.tab.c $(CFLAGS)
+	$(CC) -o $(OUTPUT) $(FILES) $(CFLAGS)
 
 compilew: 
-	gcc -o minic lex.yy.c tiny.tab.c $(CFLAGSw)
+	 $(CC) -o $(OUTPUT) $(FILES) $(CFLAGSw)
 
 clean: 
 	rm *.c *.h *.output
