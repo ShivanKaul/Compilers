@@ -4,24 +4,14 @@
 #include "tree.h"
 #include "pretty.h"
 
-
-
 extern int yydebug;
 int yyparse();
-
-EXP *prog;
-
+PROG *prog;
 
 int main(int argc, char* argv[]) {
 	// Debug?
 	if (argc < 2) yydebug = 0; 
 	else yydebug = strcmp("-d", argv[1]) ? 0 : 1;
-
-
-
-	// file name is at $2
-
-
 	if (yyparse()) {
 		printf("INVALID.\n");
 	}
@@ -29,7 +19,6 @@ int main(int argc, char* argv[]) {
 		// parsing passed
 		printf("VALID.\n");
 		
-
 		// Generate filenames
 		char *file = strsep(&argv[2], ".min");
 		char *pretty = malloc(strlen(file)+strlen(".pretty.min")+1);;		
@@ -43,16 +32,11 @@ int main(int argc, char* argv[]) {
     	FILE *fpPretty;
     	fpPretty=fopen(pretty, "w");
 
-		prettyEXP(prog, fpPretty);
-
+		prettyPROG(prog, fpPretty);
 
 		// free(pretty);
 		// free(symbol);
 		// free(gen_code);
 		// free(file);
-		
-
-
-
 	}
 }
