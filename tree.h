@@ -3,7 +3,7 @@
 
 typedef struct EXP {
   int yylineno;
-  enum {id, int_lit, string_lit, float_lit, times, div, plus, minus} kind;
+  enum {id, int_lit, string_lit, float_lit, times, div, plus, minus, uminus} kind;
   union {
     char *id;
     int int_lit;
@@ -13,6 +13,7 @@ typedef struct EXP {
     struct {struct EXP *left; struct EXP *right;} div;
     struct {struct EXP *left; struct EXP *right;} plus;
     struct {struct EXP *left; struct EXP *right;} minus;
+    struct EXP *uminus;
   } val;
 } EXP;
 
@@ -24,12 +25,13 @@ typedef struct PROG {
 
 typedef struct STMT {
   int yylineno;
-  enum {assign,print,read,if_stmt,while_stmt} kind;
+  enum {assign,print,read,if_stmt,if_else_stmt, while_stmt} kind;
   union {
     struct {char *id; struct EXP *exp;} assign;
     struct EXP *printExp;
     char *readId;
     struct IF *if_stmt;
+    struct IF *if_else_stmt;
     struct WHILE *while_stmt;
   } val;
   struct STMT *next;
@@ -69,6 +71,7 @@ EXP *makeEXPtimes(EXP *left, EXP *right);
 EXP *makeEXPdiv(EXP *left, EXP *right);
 EXP *makeEXPplus(EXP *left, EXP *right);
 EXP *makeEXPminus(EXP *left, EXP *right);
+EXP *makeEXPUnaryMinus(EXP *exp);
 
 PROG *makePROG(DECL *decls, STMT *stmts);
 
@@ -76,13 +79,18 @@ STMT *makeSTMTassign(char *id, EXP *exp);
 STMT *makeSTMTread(char *id);
 STMT *makeSTMTprint(EXP *exp);
 
+STMT *makeSTMTif(EXP *exp, STMT *stmt_list);
+STMT *makeSTMTifElse(EXP *exp, STMT *stmt_list, STMT *else_stmt_list);
+IF *makeIFif(EXP *exp, STMT *stmt_list);
+IF *makeIFifElse(EXP *exp, STMT *stmt_list, STMT *else_stmt_list);
+STMT *makeSTMTwhile(EXP *exp, STMT *stmt_list);
+WHILE *makeWHILE(EXP *exp, STMT *stmt_list);
+
 DECL *makeDECLfloat(char *id);
 DECL *makeDECLint(char *id);
 DECL *makeDECLstring(char *id);
 
-IF *makeSTMTif(EXP *exp, STMT *stmt_list);
-IF *makeSTMTifElse(EXP *exp, STMT *stmt_list, STMT *else_stmt_list);
-WHILE *makeSTMTwhile(EXP *exp, STMT *stmt_list);
+
 
 
 #endif /* !TREE_H */

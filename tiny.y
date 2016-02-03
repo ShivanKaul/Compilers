@@ -6,7 +6,7 @@ extern char *yytext;
 extern int yylineno;
 int yydebug;
 
-extern EXP *prog;
+extern PROG *prog;
 
 void yyerror(const char* error) {
 	fprintf(stderr, "Error before %s on %d. ", yytext, yylineno); 
@@ -21,8 +21,6 @@ void yyerror(const char* error) {
 	struct EXP *exp;
 	struct DECL *decl;
 	struct STMT *stmt;
-	struct IF *if_stmt;
-	struct WHILE *while_stmt;
 }
 
 /* Formatting semantic values.  */
@@ -49,11 +47,9 @@ void yyerror(const char* error) {
 %token <stringconst> T_endif
 
 %type <exp> exp
-%type <stmt> stmt stmt_list
+%type <stmt> stmt stmt_list if_stmt while_stmt
 %type <prog> prog
 %type <decl> decl decl_list
-%type <if_stmt> if_stmt
-%type <while_stmt> while_stmt
 
 %start prog
 
@@ -94,12 +90,12 @@ stmt:		T_id '=' exp ';'
 
 
 if_stmt:	T_if exp T_then stmt_list T_endif
-       			{ makeSTMTif($2, $4); }
+       			{ printf("DEBUG Entered IF rule.\n"); $$ = makeSTMTif($2, $4); }
 		| T_if exp T_then stmt_list T_else stmt_list T_endif
-			{ makeSTMTifElse($2, $4, $6); }
+			{ $$ = makeSTMTifElse($2, $4, $6); }
 
 while_stmt:	T_while exp T_do stmt_list T_done
- 	 		{ makeSTMTwhile($1, $4); }
+ 	 		{ $$ = makeSTMTwhile($2, $4); }
 
 exp:		T_int_lit
    			{ $$ = makeEXPint_lit ($1); }
@@ -120,7 +116,7 @@ exp:		T_int_lit
 		| exp '/' exp
 			{ $$ = makeEXPdiv ($1, $3); }
 		| '-'  exp      %prec  '*'
-			{ $$ = makeEXPminus (0, $2); }
+			{ $$ = makeEXPUnaryMinus ($2); }
 ;
 
 %%

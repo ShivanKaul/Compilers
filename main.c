@@ -32,6 +32,8 @@ int main(int argc, char* argv[]) {
     	FILE *fpPretty;
     	fpPretty=fopen(pretty, "w");
 
+    	printf("DEBUG: Pretty progging in main.\n");
+
 		prettyPROG(prog, fpPretty);
 
 		// free(pretty);
