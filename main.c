@@ -3,10 +3,13 @@
 #include <string.h>
 #include "tree.h"
 #include "pretty.h"
+#include "typecheck.h"
+#include "symbol.h"
 
 extern int yydebug;
 int yyparse();
 PROG *prog;
+DECL *decls;
 
 int main(int argc, char* argv[]) {
 	// Debug?
@@ -28,17 +31,23 @@ int main(int argc, char* argv[]) {
 		sprintf(symbol, "%s.symbol.txt", file);
 		sprintf(gen_code, "%s.c", file);
 
-    	// Write to file
-    	FILE *fpPretty;
-    	fpPretty=fopen(pretty, "w");
-
-    	printf("DEBUG: Pretty progging in main.\n");
-
+    	// AST
+		FILE *fpPretty;
+		fpPretty=fopen(pretty, "w");
+		printf("DEBUG: Pretty progging in main.\n");
 		prettyPROG(prog, fpPretty);
 
-		// free(pretty);
-		// free(symbol);
-		// free(gen_code);
-		// free(file);
+		// Symbol Table
+		FILE *fpSymbolTable;
+		fpSymbolTable=fopen(symbol, "w");
+		printf("Symbol table:\n");
+		createSymbolTable(prog->./decls);
+		prettyDECLS(prog->decls, fpSymbolTable);
+
+		// Type Check
+		typeCheck(prog->stmts);
+
+		// Code gen
+
 	}
 }
