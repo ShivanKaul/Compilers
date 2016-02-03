@@ -2,6 +2,10 @@
 #include <stdio.h>
 #include "tree.h"
 
+#if YYBISON
+int yylex();
+#endif
+
 extern char *yytext;
 extern int yylineno;
 int yydebug;

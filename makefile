@@ -1,4 +1,4 @@
-CFLAGS = -ll 
+CFLAGS = -ll  
 CFLAGSw = $(CFLAGS) -w
 FILES = lex.yy.c tiny.tab.c tree.c pretty.c main.c symbol.c typecheck.c memory.c
 OUTPUT =  minic
