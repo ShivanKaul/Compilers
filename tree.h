@@ -3,6 +3,7 @@
 
 typedef struct EXP {
   int yylineno;
+  char *type;
   enum {id, int_lit, string_lit, float_lit, times, div, plus, minus, uminus} kind;
   union {
     char *id;

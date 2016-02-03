@@ -1,7 +1,5 @@
-typedef struct SYMBOL {
-	char* id;
-	char* type;
-	SYMBOL *next;
-} SYMBOL;
+#include "tree.h"
+#include <stdio.h>
 
-void createSymbolTable(DECL *decls);
+char* symbolExists(DECL *decls, char *toCheck);
+int printSymbolTable(DECL *decls, FILE* fp);

@@ -36,16 +36,22 @@ int main(int argc, char* argv[]) {
 		fpPretty=fopen(pretty, "w");
 		printf("DEBUG: Pretty progging in main.\n");
 		prettyPROG(prog, fpPretty);
+		fclose(fpPretty);
 
 		// Symbol Table
 		FILE *fpSymbolTable;
 		fpSymbolTable=fopen(symbol, "w");
-		printf("Symbol table:\n");
-		createSymbolTable(prog->./decls);
-		prettyDECLS(prog->decls, fpSymbolTable);
+		printf("DEBUG: Symbol table:\n"); // remove
+		if (!printSymbolTable(prog->decls, fpSymbolTable)) {
+			printf("DEBUG: Error in building symbol table!\n");
+			return 1;
+		}
+		fclose(fpSymbolTable);
 
 		// Type Check
-		typeCheck(prog->stmts);
+		if (typeCheck(prog->stmts, prog->decls)) {
+			return 1;
+		}
 
 		// Code gen
 

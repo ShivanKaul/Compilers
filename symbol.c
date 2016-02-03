@@ -1,29 +1,51 @@
 #include "symbol.h"
 #include "memory.h"
-#include "tree.h"
+#include <string.h>
 
-void createSymbolTable(DECL *decls, SYMBOL *sym) {
-	while (decls) {
-		SYMBOL *s;
-  		s = NEW(SYMBOL);
-		
-		switch (decls->kind) :
+
+char* symbolExists(DECL *decls, char *toCheck) {
+	DECL *d = decls;
+	while (d) {
+		switch (d->kind) {
 			case floatK:
-				s->id = decls->floatId;
-				s->type = "float";
-				break;
-			case stringId:
-				s->id = decls->stringId;
-				s->type = "string";
-				break;
-			case intId:
-				s->id = decls->intId;
-				s->type = "int";
-				break;
-		s->next = sym;		
-		decls = decls->next;
+			if (!strcmp(d->val.floatId, toCheck))
+				return "float";
+			case intK:
+			if (!strcmp(d->val.intId, toCheck))
+				return "int";
+			case stringK:
+			if (!strcmp(d->val.stringId, toCheck))
+				return "string";
+		}
+		d = d->next;
 	}
-
+	return NULL;
 }
 
-int checkIfSymbolExists(SYMBOL *s, )
+int printSymbolTable(DECL *decls, FILE* fp) {
+	DECL *d = decls;
+	while (d) {
+		char *name;
+		switch (d->kind) {
+				case floatK:
+					name = d->val.floatId;
+					fprintf(fp, "%s: float\n", name);
+					break;
+				case intK:
+					name = d->val.intId;
+					fprintf(fp, "%s: int\n", name);
+					break;
+				case stringK:
+					name = d->val.stringId;
+					fprintf(fp, "%s: string\n", name);
+					break;
+		}
+		DECL *d2 = d->next;
+		if (symbolExists(d2, name)) {
+			printf("INVALID: line %i: identifier %s already declared\n", d2->yylineno, name);
+			return 0;
+		}
+		d = d->next;
+	}
+	return 1;
+}

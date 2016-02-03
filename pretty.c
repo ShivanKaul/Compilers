@@ -49,7 +49,7 @@ void prettySTMTS(STMT *s, FILE* fp) {
             break;
         case read:
             fprintf(fp, "read %s",s->val.readId);
-            fprintf(fp, ";");
+            fprintf(fp, ";\n");
             break;
         case if_stmt:
             printf("DEBUG: Entered if_stmt of STMT\n");
@@ -127,7 +127,7 @@ void prettyWHILE(WHILE *w, FILE* fp) {
     prettyEXP(w->val.while_cond, fp);
     fprintf(fp, " do\n");
     prettySTMTS(w->val.do_cond, fp);
-    fprintf(fp, "\ndone\n");
+    fprintf(fp, "done\n");
 }
 void prettyIF(IF *i, FILE* fp) {
     printf("DEBUG: Entered prettyIF\n");
@@ -139,7 +139,7 @@ void prettyIF(IF *i, FILE* fp) {
             prettyEXP(i->val.no_else.if_cond, fp);
             fprintf(fp, " then\n");
             prettySTMTS(i->val.no_else.then, fp);
-            fprintf(fp, "\nendif\n");
+            fprintf(fp, "endif\n");
             break;
         case yes_else:
             printf("DEBUG: Entered yes_else of prettyIF\n");
@@ -148,9 +148,9 @@ void prettyIF(IF *i, FILE* fp) {
             prettyEXP(i->val.yes_else.if_cond, fp);
             fprintf(fp, " then\n");
             prettySTMTS(i->val.yes_else.then, fp);
-            fprintf(fp, " else\n");
+            fprintf(fp, "else\n");
             prettySTMTS(i->val.yes_else.else_cond, fp);
-            fprintf(fp, "\nendif\n");
+            fprintf(fp, "endif\n");
             break;
     }
 }

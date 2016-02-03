@@ -131,6 +131,7 @@ DECL *makeDECLstring(char *id) {
 EXP *makeEXPid(char *lit)
 { EXP *e;
   e = NEW(EXP);
+  e->type = NULL;
   e->yylineno = yylineno;
   e->kind = id;
   e->val.id = lit;
@@ -140,6 +141,7 @@ EXP *makeEXPid(char *lit)
 EXP *makeEXPint_lit(int lit)
 { EXP *e;
   e = NEW(EXP);
+  e->type = NULL;
   e->yylineno = yylineno;
   e->kind = int_lit;
   e->val.int_lit = lit;
@@ -148,6 +150,7 @@ EXP *makeEXPint_lit(int lit)
 EXP *makeEXPfloat_lit(float lit)
 { EXP *e;
   e = NEW(EXP);
+  e->type = NULL;
   e->yylineno = yylineno;
   e->kind = float_lit;
   e->val.float_lit = lit;
@@ -156,6 +159,7 @@ EXP *makeEXPfloat_lit(float lit)
 EXP *makeEXPstring_lit(char *lit)
 { EXP *e;
   e = NEW(EXP);
+  e->type = NULL;
   e->yylineno = yylineno;
   e->kind = string_lit;
   e->val.string_lit = lit;
@@ -165,6 +169,7 @@ EXP *makeEXPstring_lit(char *lit)
 EXP *makeEXPtimes(EXP *left, EXP *right)
 { EXP *e;
   e = NEW(EXP);
+  e->type = NULL;
   e->yylineno = yylineno;
   e->kind = times;
   e->val.times.left = left;
@@ -175,6 +180,7 @@ EXP *makeEXPtimes(EXP *left, EXP *right)
 EXP *makeEXPdiv(EXP *left, EXP *right)
 { EXP *e;
   e = NEW(EXP);
+  e->type = NULL;
   e->yylineno = yylineno;
   e->kind = div;
   e->val.div.left = left;
@@ -185,6 +191,7 @@ EXP *makeEXPdiv(EXP *left, EXP *right)
 EXP *makeEXPplus(EXP *left, EXP *right)
 { EXP *e;
   e = NEW(EXP);
+  e->type = NULL;
   e->yylineno = yylineno;
   e->kind = plus;
   e->val.plus.left = left;
@@ -195,6 +202,7 @@ EXP *makeEXPplus(EXP *left, EXP *right)
 EXP *makeEXPminus(EXP *left, EXP *right)
 { EXP *e;
   e = NEW(EXP);
+  e->type = NULL;
   e->yylineno = yylineno;
   e->kind = minus;
   e->val.minus.left = left;
@@ -204,6 +212,7 @@ EXP *makeEXPminus(EXP *left, EXP *right)
 EXP *makeEXPUnaryMinus(EXP *exp)
 { EXP *e;
   e = NEW(EXP);
+  e->type = NULL;
   e->yylineno = yylineno;
   e->kind = uminus;
   e->val.uminus = exp;
