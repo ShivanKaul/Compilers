@@ -2,15 +2,12 @@
 #include "pretty.h"
  
 void prettyPROG(PROG *p, FILE* fp) {
-    printf("DEBUG: pretty printing DECLS prettyPROG\n");
     prettyDECLS(p->decls, fp);
-    printf("DEBUG: pretty printing of DECLS done, pretty printing STMTS now in prettyPROG\n");
     prettySTMTS(p->stmts, fp);
 }
 
 void prettyDECLS(DECL *d, FILE* fp) {
     if (d == NULL) {
-        printf("DEBUG: D is null!\n");
         return;
     }
 
@@ -30,7 +27,6 @@ void prettyDECLS(DECL *d, FILE* fp) {
 
 void prettySTMTS(STMT *s, FILE* fp) {
     if (s == NULL) {
-        printf("DEBUG: S is null!\n");
         return;
     } 
     // else {
@@ -52,11 +48,10 @@ void prettySTMTS(STMT *s, FILE* fp) {
             fprintf(fp, ";\n");
             break;
         case if_stmt:
-            printf("DEBUG: Entered if_stmt of STMT\n");
             prettyIF(s->val.if_stmt, fp);
             break;
         case if_else_stmt:
-            printf("DEBUG: Entered if_else_stmt of STMT\n");
+            printf(": Entered if_else_stmt of STMT\n");
             prettyIF(s->val.if_else_stmt, fp);
             break;
         case while_stmt:
@@ -80,7 +75,6 @@ void prettyEXP(EXP *e, FILE* fp)
         fprintf(fp, "%f",e->val.float_lit);
         break;
     case string_lit:
-        printf("DEBUG: in string lit of exp\n");
         fprintf(fp, "%s",e->val.string_lit);
         break;
 
@@ -130,11 +124,9 @@ void prettyWHILE(WHILE *w, FILE* fp) {
     fprintf(fp, "done\n");
 }
 void prettyIF(IF *i, FILE* fp) {
-    printf("DEBUG: Entered prettyIF\n");
 
     switch (i->kind) {
         case no_else:
-            printf("DEBUG: Entered no_else of prettyIF\n");
             fprintf(fp, "if ");
             prettyEXP(i->val.no_else.if_cond, fp);
             fprintf(fp, " then\n");
@@ -142,7 +134,6 @@ void prettyIF(IF *i, FILE* fp) {
             fprintf(fp, "endif\n");
             break;
         case yes_else:
-            printf("DEBUG: Entered yes_else of prettyIF\n");
 
             fprintf(fp, "if ");
             prettyEXP(i->val.yes_else.if_cond, fp);

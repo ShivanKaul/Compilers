@@ -94,7 +94,7 @@ stmt:		T_id '=' exp ';'
 
 
 if_stmt:	T_if exp T_then stmt_list T_endif
-       			{ printf("DEBUG Entered IF rule.\n"); $$ = makeSTMTif($2, $4); }
+       			{ $$ = makeSTMTif($2, $4); }
 		| T_if exp T_then stmt_list T_else stmt_list T_endif
 			{ $$ = makeSTMTifElse($2, $4, $6); }
 

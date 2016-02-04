@@ -35,29 +35,24 @@ int main(int argc, char* argv[]) {
     	// AST
 		FILE *fpPretty;
 		fpPretty=fopen(pretty, "w");
-		printf("DEBUG: Pretty progging in main.\n");
 		prettyPROG(prog, fpPretty);
 		fclose(fpPretty);
 
 		// Symbol Table
 		FILE *fpSymbolTable;
 		fpSymbolTable=fopen(symbol, "w");
-		printf("DEBUG: Building symbol table... "); // remove
 		if (!printSymbolTable(prog->decls, fpSymbolTable)) {
-			printf("DEBUG: Error in building symbol table!\n");
 			return 1;
 		}
 		fclose(fpSymbolTable);
 		printf("done!\n"); // remove
 
 		// Type Check
-		printf("DEBUG: Type checking... "); // remove
 		if (!typeCheck(prog->stmts, prog->decls)) {
 			return 1;
 		}
 
 		// Code gen
-		printf("DEBUG: Code gen...\n"); // remove
 		FILE *fpGenCode;
 		fpGenCode=fopen(gen_code, "w");
 		generateCode(prog, fpGenCode);

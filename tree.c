@@ -6,7 +6,6 @@
 extern int yylineno;
 
 PROG *makePROG(DECL *decls, STMT *stmts) { 
-  printf("DEBUG: Making prog\n");
   PROG *e;
   e = NEW(PROG);
   e->yylineno = yylineno;
@@ -42,7 +41,6 @@ STMT *makeSTMTprint(EXP *exp)
   return e;
 }
 STMT *makeSTMTif(EXP *exp, STMT *stmt_list) { 
-  printf("DEBUG: STMT: Making IF\n");
   STMT *e;
   e = NEW(STMT);
   e->yylineno = yylineno;
@@ -51,7 +49,6 @@ STMT *makeSTMTif(EXP *exp, STMT *stmt_list) {
   return e;
 }
 STMT *makeSTMTifElse(EXP *exp, STMT *stmt_list, STMT *else_stmt_list) { 
-  printf("DEBUG: SMT: Making IF else\n");
   STMT *e;
   e = NEW(STMT);
   e->yylineno = yylineno;
@@ -60,7 +57,6 @@ STMT *makeSTMTifElse(EXP *exp, STMT *stmt_list, STMT *else_stmt_list) {
   return e;
 }
 IF *makeIFif(EXP *exp, STMT *stmt_list) { 
-  printf("DEBUG: IF: Making IF\n");
   IF *e;
   e = NEW(IF);
   e->yylineno = yylineno;
@@ -70,7 +66,6 @@ IF *makeIFif(EXP *exp, STMT *stmt_list) {
   return e;
 }
 IF *makeIFifElse(EXP *exp, STMT *stmt_list, STMT *else_stmt_list) {
-  printf("DEBUG: IF: Making IF ELSE\n");
   IF *e;
   e = NEW(IF);
   e->yylineno = yylineno;
@@ -98,7 +93,6 @@ WHILE *makeWHILE(EXP *exp, STMT *stmt_list)
 }
 
 DECL *makeDECLfloat(char *id) {
-  printf("DEBUG: Making float decl\n");
 
   DECL *e;
   e = NEW(DECL);
@@ -108,7 +102,6 @@ DECL *makeDECLfloat(char *id) {
   return e;
 }
 DECL *makeDECLint(char *id) {
-  printf("DEBUG: Making int decl\n");
   DECL *e;
   e = NEW(DECL);
   e->yylineno = yylineno;
@@ -117,7 +110,6 @@ DECL *makeDECLint(char *id) {
   return e;
 }
 DECL *makeDECLstring(char *id) {
-  printf("DEBUG: Making string decl\n");
 
   DECL *e;
   e = NEW(DECL);
