@@ -74,7 +74,7 @@ void prettyEXP(EXP *e, FILE* fp)
         break;
 
     case int_lit:
-        fprintf(fp, "%i",e->val.int_lit);
+        fprintf(fp, "%d",e->val.int_lit);
         break;
     case float_lit:
         fprintf(fp, "%f",e->val.float_lit);

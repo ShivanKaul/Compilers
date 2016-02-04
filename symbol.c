@@ -42,7 +42,7 @@ int printSymbolTable(DECL *decls, FILE* fp) {
 		}
 		DECL *d2 = d->next;
 		if (symbolExists(d2, name)) {
-			printf("INVALID: line %i: identifier %s already declared\n", d2->yylineno, name);
+			printf("INVALID: line %d: identifier %s already declared\n", d2->yylineno, name);
 			return 0;
 		}
 		d = d->next;

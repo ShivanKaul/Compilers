@@ -91,8 +91,4 @@ DECL *makeDECLfloat(char *id);
 DECL *makeDECLint(char *id);
 DECL *makeDECLstring(char *id);
 
-
-
-
 #endif /* !TREE_H */
-

@@ -23,26 +23,26 @@ int typeCheck(STMT *stmts, DECL* decls) {
 						printf("DEBUG: left is %s\n", left);
 						printf("DEBUG: right is %s\n", right);
 						if (strcmp(right, "int")) { // right is not int
-							printf("INVALID: line %i: cannot assign %s into a %s\n", s->yylineno, left, right);
+							printf("INVALID: line %d: cannot assign %s into a %s\n", s->yylineno, left, right);
 							return 0;
 						}
 					} else if (!strcmp(left, "string"))  { // left is string
 						printf("DEBUG: left is %s\n", left);
 						printf("DEBUG: right is %s\n", right); 
 						if (strcmp(right, "string")) { // right is not string
-							printf("INVALID: line %i: cannot assign %s into a %s\n", s->yylineno, left, right);
+							printf("INVALID: line %d: cannot assign %s into a %s\n", s->yylineno, left, right);
 							return 0;
 						}
 					} else if (!strcmp(left, "float")) { // left is float
 						printf("DEBUG: left is %s\n", left);
 						printf("DEBUG: right is %s\n", right);
 						if (!strcmp(right, "string")) { // right is string
-							printf("INVALID: line %i: cannot assign %s into a %s\n", s->yylineno, left, right);
+							printf("INVALID: line %d: cannot assign %s into a %s\n", s->yylineno, left, right);
 							return 0;
 						}
 					}
 				} else {
-						printf("INVALID: line %i: %s not declared.\n", s->yylineno, s->val.assign.id);
+						printf("INVALID: line %d: %s not declared.\n", s->yylineno, s->val.assign.id);
 						return 0;
 				}
 				break;
@@ -51,7 +51,7 @@ int typeCheck(STMT *stmts, DECL* decls) {
 				printf("DEBUG: if stmt encountered\n");
 				char* exp_type = typeCheckEXP(decls, s->val.if_stmt->val.no_else.if_cond);
 				if (strcmp(exp_type, "int")) { // not int
-					printf("INVALID: line %i: expected int, found %s\n", s->yylineno, exp_type);
+					printf("INVALID: line %d: expected int, found %s\n", s->yylineno, exp_type);
 					return 0;
 				}
 				STMT *if_stmts = s->val.if_stmt->val.no_else.then;
@@ -63,7 +63,7 @@ int typeCheck(STMT *stmts, DECL* decls) {
 				printf("DEBUG: while stmt encountered\n");
 				char* exp_type = typeCheckEXP(decls, s->val.while_stmt->val.while_cond);
 				if (strcmp(exp_type, "int")) { // not int
-					printf("INVALID: line %i: expected int, found %s\n", s->yylineno, exp_type);
+					printf("INVALID: line %d: expected int, found %s\n", s->yylineno, exp_type);
 					return 0;
 				}
 				STMT *dos = s->val.while_stmt->val.do_cond;
@@ -75,7 +75,7 @@ int typeCheck(STMT *stmts, DECL* decls) {
 				printf("DEBUG: if else stmt encountered\n");
 				char* exp_type = typeCheckEXP(decls, s->val.if_else_stmt->val.yes_else.if_cond);
 				if (strcmp(exp_type, "int")) { // not int
-					printf("INVALID: line %i: expected int, found %s\n", s->yylineno, exp_type);
+					printf("INVALID: line %d: expected int, found %s\n", s->yylineno, exp_type);
 					return 0;
 				}
 				printf("DEBUG: hurrah, exp is int!\n");
@@ -145,7 +145,7 @@ char* typeCheckEXP(DECL* decls, EXP *exp) {
 					exp->type = "float";
 					return exp->type;
 				}
-				else printf("INVALID: line %i: Cannot operate on a %s\n", exp->yylineno, right);
+				else printf("INVALID: line %d: Cannot operate on a %s\n", exp->yylineno, right);
 				return NULL;
 			} else if (!strcmp(left, "float"))  {
 				if (!strcmp(right, "int")) { // right is int
@@ -156,10 +156,10 @@ char* typeCheckEXP(DECL* decls, EXP *exp) {
 					exp->type = "float";
 					return exp->type;
 				}
-				else printf("INVALID: line %i: Cannot operate on a %s\n", exp->yylineno, left);
+				else printf("INVALID: line %d: Cannot operate on a %s\n", exp->yylineno, left);
 				return NULL;
 			} else {
-				printf("INVALID: line %i: Cannot operate on a %s\n", exp->yylineno, left);
+				printf("INVALID: line %d: Cannot operate on a %s\n", exp->yylineno, left);
 			}
 			break;
 		}
@@ -178,7 +178,7 @@ char* typeCheckEXP(DECL* decls, EXP *exp) {
 					exp->type = "float";
 					return exp->type;
 				}
-				else printf("INVALID: line %i: Cannot operate on a %s\n", exp->yylineno, right);
+				else printf("INVALID: line %d: Cannot operate on a %s\n", exp->yylineno, right);
 				return NULL;
 			} else if (!strcmp(left, "float"))  {
 				if (!strcmp(right, "int")) { // right is int
@@ -189,10 +189,10 @@ char* typeCheckEXP(DECL* decls, EXP *exp) {
 					exp->type = "float";
 					return exp->type;
 				}
-				else printf("INVALID: line %i: Cannot operate on a %s\n", exp->yylineno, left);
+				else printf("INVALID: line %d: Cannot operate on a %s\n", exp->yylineno, left);
 				return NULL;
 			} else {
-				printf("INVALID: line %i: Cannot operate on a %s\n", exp->yylineno, left);
+				printf("INVALID: line %d: Cannot operate on a %s\n", exp->yylineno, left);
 			}
 			break;
 		}
@@ -211,7 +211,7 @@ char* typeCheckEXP(DECL* decls, EXP *exp) {
 					exp->type = "float";
 					return exp->type;
 				}
-				else printf("INVALID: line %i: Cannot operate on a %s\n", exp->yylineno, right);
+				else printf("INVALID: line %d: Cannot operate on a %s\n", exp->yylineno, right);
 				return NULL;
 			} else if (!strcmp(left, "float"))  {
 				if (!strcmp(right, "int")) { // right is int
@@ -222,12 +222,12 @@ char* typeCheckEXP(DECL* decls, EXP *exp) {
 					exp->type = "float";
 					return exp->type;
 				}
-				else printf("INVALID: line %i: Cannot operate on a %s\n", exp->yylineno, left);
+				else printf("INVALID: line %d: Cannot operate on a %s\n", exp->yylineno, left);
 				return NULL;
 			} else {
 				// left is string
 				if (strcmp(right, "string")) { // right is not string
-					printf("INVALID: line %i: Cannot operate on a %s\n", exp->yylineno, left);
+					printf("INVALID: line %d: Cannot operate on a %s\n", exp->yylineno, left);
 				} else {
 					exp->type = "string";
 					return exp->type;
@@ -251,7 +251,7 @@ char* typeCheckEXP(DECL* decls, EXP *exp) {
 					exp->type = "float";
 					return exp->type;
 				}
-				else printf("INVALID: line %i: Cannot operate on a %s\n", exp->yylineno, right);
+				else printf("INVALID: line %d: Cannot operate on a %s\n", exp->yylineno, right);
 				return NULL;
 			} else if (!strcmp(left, "float"))  {
 				if (!strcmp(right, "int")) { // right is int
@@ -262,12 +262,12 @@ char* typeCheckEXP(DECL* decls, EXP *exp) {
 					exp->type = "float";
 					return exp->type;
 				}
-				else printf("INVALID: line %i: Cannot operate on a %s\n", exp->yylineno, left);
+				else printf("INVALID: line %d: Cannot operate on a %s\n", exp->yylineno, left);
 				return NULL;
 			} else {
 				// left is string
 				if (strcmp(right, "string")) { // right is not string
-					printf("INVALID: line %i: Cannot operate on a %s\n", exp->yylineno, left);
+					printf("INVALID: line %d: Cannot operate on a %s\n", exp->yylineno, left);
 				} else {
 					exp->type = "string";
 					return exp->type;
