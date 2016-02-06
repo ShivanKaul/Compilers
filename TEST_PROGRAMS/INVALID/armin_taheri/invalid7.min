@@ -1,5 +1,0 @@
-#no lone identifier
-
-var x:int;
-
-x;

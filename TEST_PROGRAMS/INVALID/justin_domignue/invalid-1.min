@@ -1,7 +1,0 @@
-# No comparison operators
-var x: int;
-x = 10;
-while x < 0 do  # error
-  x = x - 1;
-done
-

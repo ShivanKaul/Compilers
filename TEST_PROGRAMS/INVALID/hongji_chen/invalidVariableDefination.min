@@ -1,6 +1,0 @@
-#invalid Variable Defination;
-
-var a;
-var b;
-
-a+b;

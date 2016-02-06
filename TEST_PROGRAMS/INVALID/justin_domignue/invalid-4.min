@@ -1,6 +1,0 @@
-# No end if
-var x: int;
-if x then
-  x = x + 1;
-# endif
-

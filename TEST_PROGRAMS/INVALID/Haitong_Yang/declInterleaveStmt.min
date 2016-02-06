@@ -1,7 +1,0 @@
-#incorrect program with parsing error: statement interleave with declaration
-
-var x : int;
-x=7;
-var y : float;
-y=3.4;
-

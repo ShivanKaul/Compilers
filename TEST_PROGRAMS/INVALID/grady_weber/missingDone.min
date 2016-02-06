@@ -1,6 +1,0 @@
-#Missing Done
-var x : int;
-x = 10;
-while x do
-    x = x - 1;    
-

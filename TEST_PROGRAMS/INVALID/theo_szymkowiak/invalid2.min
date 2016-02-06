@@ -1,5 +1,0 @@
-# WILL FAIL BECAUSE TYPE complex DOESN'T EXIST
-
-var x: int;
-var y: complex;
-

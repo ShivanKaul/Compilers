@@ -1,3 +1,0 @@
-# Ids are define as: Letter(Letter|Digit)*, so them can't have digits at the beginning.
-var 0abc: int;
-

@@ -1,8 +1,0 @@
-var x: int;
-var y: int;
-
-x = y;
-
-if x then
-	y = x;
-else

@@ -1,5 +1,0 @@
-#Typo
-var x : itn;
-var y : float;
-x = 10;
-

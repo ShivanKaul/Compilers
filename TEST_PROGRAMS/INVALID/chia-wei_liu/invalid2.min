@@ -1,9 +1,0 @@
-var x:int;var y:int;
-x = 5; y = 6;
-
-if x then
-    y = 7;
-    if y then
-        print "poop";
-    # missing closing endif
-endif

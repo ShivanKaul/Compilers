@@ -1,5 +1,0 @@
-var x: float;
-
-x = 0.34;
-
-var y: int;

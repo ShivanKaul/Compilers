@@ -1,5 +1,0 @@
-var x: int;
-read x;
-var y: float;
-y = 3.2;
-

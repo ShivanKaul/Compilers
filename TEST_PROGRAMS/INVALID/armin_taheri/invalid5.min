@@ -1,4 +1,0 @@
-# no assignment inside a declaration
-
-var pi: float = 3.14159265359;
-

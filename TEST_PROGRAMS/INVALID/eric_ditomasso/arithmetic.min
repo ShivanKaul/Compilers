@@ -1,5 +1,0 @@
-# test the bracket matching in expressions
-var x: int;
-var y: float;
-
-print (((x)))*-(y));

@@ -1,5 +1,0 @@
-# Missing endif
-
-if x then
-else
-

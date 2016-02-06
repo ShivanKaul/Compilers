@@ -1,9 +1,0 @@
-# Scott Cooper
-# 260503452
-# COMP520 - Winter 2016
-#
-# Should not allow multiple zeroes for an integer
-
-var x : int;
-x = 00;
-

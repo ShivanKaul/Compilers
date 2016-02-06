@@ -1,8 +1,0 @@
-var n : int;
-var i : int;
-n = 10;
-i = 10;
-while n = i do
-i = i - 1;
-done
-

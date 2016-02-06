@@ -1,4 +1,0 @@
-var x: int;var y:float;
-
-x + y;
-(x+y) = (x+y+5); # cannot assign to exp

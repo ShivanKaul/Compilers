@@ -1,3 +1,0 @@
-string = "casper is breaking this program";
-
-# should get error for assigning to keyword

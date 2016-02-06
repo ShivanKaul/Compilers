@@ -1,4 +1,0 @@
-var n : string;
-read n;
-var i : int;
-i = 4;

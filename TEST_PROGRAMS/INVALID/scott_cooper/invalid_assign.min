@@ -1,7 +1,0 @@
-# Scott Cooper
-# 260503452
-# COMP520 - Winter 2016
-#
-# Should only be able to assign to an identifier
-"hello" = 1;
-

@@ -1,4 +1,0 @@
-if x then
-    while y do
-    endif
-done

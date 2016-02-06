@@ -1,7 +1,0 @@
-# Invalid MiniLang program (declaration follows an expression)
-
-var n: int;
-
-read n;
-
-var x: int;

@@ -1,6 +1,0 @@
-# testing invalid string characters
-var str: string;
-
-str = "abc^";
-
-print str;

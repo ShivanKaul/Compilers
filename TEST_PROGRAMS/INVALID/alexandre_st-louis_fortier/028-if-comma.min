@@ -1,6 +1,0 @@
-if 0 then
-  print 1;
-else
-  print 2;
-endif;
-

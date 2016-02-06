@@ -1,8 +1,0 @@
-# no "then" for if statement"
-var x: float;
-
-if 5 
- x = 0.54
-else
- x = 100.23
-endif

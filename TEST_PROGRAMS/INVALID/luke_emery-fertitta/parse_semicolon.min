@@ -1,5 +1,0 @@
-# parsing error example - statement without terminating semicolon
-
-var x: int;
-x = 0;
-print x

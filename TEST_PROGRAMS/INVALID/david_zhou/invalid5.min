@@ -1,5 +1,0 @@
-# leading 0 in int
-
-var x: int;
-x = 01;
-print x;

@@ -1,6 +1,0 @@
-# - should not be allowed in a string
- var greet : string;
-
- greet = "How are you? -- David";
-
- print greet;

@@ -1,5 +1,0 @@
-#incorrect program with scanning error: unknown symbol
-
-var x : int;
-x = 4@;
-

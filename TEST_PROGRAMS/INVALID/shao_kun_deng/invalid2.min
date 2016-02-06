@@ -1,5 +1,0 @@
-# invalid identifier names
-
-var 1x = int;
-var ?x = float;
-var "a" = string;

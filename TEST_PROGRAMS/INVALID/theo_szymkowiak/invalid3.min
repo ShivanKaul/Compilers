@@ -1,8 +1,0 @@
-# WILL FAIL BECAUSE MISSING ;
-
-var x: int;
-
-while x do
-  print "test"
-done
-

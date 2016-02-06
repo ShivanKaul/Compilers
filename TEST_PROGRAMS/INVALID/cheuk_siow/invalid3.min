@@ -1,8 +1,0 @@
-# Invalid program 3: unexpected logical operator.
-
-var n: int;
-read n;
-while n > 1 do
-  n = n - 1;
-done
-

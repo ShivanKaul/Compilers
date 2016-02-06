@@ -1,6 +1,0 @@
-# Invalid MiniLang program (assignment expression)
-
-var x: int;
-var y: int;
-
-x = y = 5;

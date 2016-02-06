@@ -1,4 +1,0 @@
-# Invalid program 5: parenthesis with empty expression.
-
-print (1.2 + 3.4) * () / (4.3 - 2.1);
-

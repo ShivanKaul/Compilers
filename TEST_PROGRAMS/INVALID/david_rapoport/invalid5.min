@@ -1,3 +1,0 @@
-# can't assign to a constant
-var pl : int;
-5 = pl;

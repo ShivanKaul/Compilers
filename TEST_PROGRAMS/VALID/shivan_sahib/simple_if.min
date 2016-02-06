@@ -1,3 +1,0 @@
-if "some string" then
-    print "something";
-endif

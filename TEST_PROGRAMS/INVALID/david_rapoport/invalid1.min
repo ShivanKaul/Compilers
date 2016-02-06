@@ -1,9 +1,0 @@
-# Will add two number, with no semicolons
-
-var i : int
-var k : int
-
-read i
-read k
-
-print i+k

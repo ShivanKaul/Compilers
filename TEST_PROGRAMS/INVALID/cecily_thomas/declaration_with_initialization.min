@@ -1,4 +1,0 @@
-# Invalid MiniLang program (variable initialized at time of declaration)
-
-var n = 10;
-

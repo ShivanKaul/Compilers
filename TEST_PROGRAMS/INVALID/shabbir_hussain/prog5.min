@@ -1,6 +1,0 @@
-var int: int;
-
-int = 0;
-
-print int;
-

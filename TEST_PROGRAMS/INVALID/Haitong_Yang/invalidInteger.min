@@ -1,5 +1,0 @@
-#parsing error: invalid integer format
-
-var x : int;
-x = -0212;
-

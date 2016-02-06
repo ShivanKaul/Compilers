@@ -1,4 +1,0 @@
-# test float formatting rules
-var x: float;
-
-x = 00.;

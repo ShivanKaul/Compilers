@@ -1,8 +1,0 @@
-# Scott Cooper
-# 260503452
-# COMP520 - Winter 2016
-#
-# Identifiers should not allow a number as the first character
-
-var 0abc : int;
-

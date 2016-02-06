@@ -1,5 +1,0 @@
-var x:int;
-var y: int;
-
-x,y = 10,20;
-

@@ -1,8 +1,0 @@
-var x: float;
-
-x = 1.;
-
-while x do
-	print "Hello World";
-# That is subtle, we might want to allow this
-done;

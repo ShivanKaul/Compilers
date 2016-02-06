@@ -1,7 +1,0 @@
-var n:int;
-var m: float;
-
-n=0;
-
-
-while if (n) then print "what"; endif do print "this shouldn't work" done

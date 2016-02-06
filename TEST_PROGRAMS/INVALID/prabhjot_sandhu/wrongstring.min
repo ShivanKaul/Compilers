@@ -1,4 +1,0 @@
-var s: string;
-
-s = "Is it just 20.5? yes, it is so cool!\n";
-

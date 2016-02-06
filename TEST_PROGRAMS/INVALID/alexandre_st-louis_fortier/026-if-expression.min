@@ -1,2 +1,0 @@
-print 1 + if 0 then 2 else 100 endif;
-

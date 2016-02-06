@@ -1,3 +1,0 @@
-# This should catch compilers which silently ignore unrecognised characters.
-print !x;
-

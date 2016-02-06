@@ -1,8 +1,0 @@
-x = y + z;
-y = z*x;
-z = z*y+x;
-
-var x: int;
-var y: float;
-var z: int;
-
